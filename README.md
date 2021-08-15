@@ -10,4 +10,4 @@
 **Author**
 
 [Twitter]: https://twitter.com/yuseiqqq
-yuseipen0716 （Twitter）
+yuseipen0716  [Twitter]

@@ -7,6 +7,7 @@
 何かおかしな内容があればどんどんコメントくださいませ。
 
 ---
-** Author **
-[@yuseiqqq]: https://twitter.com/yuseiqqq
-yuseipen0716 （Twitter @yuseiqqq）
+**Author**
+
+[Twitter]: https://twitter.com/yuseiqqq
+yuseipen0716 （Twitter）

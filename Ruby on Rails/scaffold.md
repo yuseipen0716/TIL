@@ -6,4 +6,6 @@ Railsでアプリケーションを作成する際に、scaffoldというコマ�
 
 - Railsに備わっているコマンドの一つ
 
-- ルーティングやMVC、テーブル
+- ルーティングやMVC、テーブルの記述やファイルを自動生成してくれる
+
+- index, show, new, edit, create, update, destroy

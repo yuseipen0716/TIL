@@ -18,3 +18,4 @@ HomeBrew-CaskというHomeBrewの拡張機能らしい。
 
 #### そうするとどうなるの？
 
+MacBookのLaunchpadから起動できる（GUIのアプリケーションとしてインストールできている。)

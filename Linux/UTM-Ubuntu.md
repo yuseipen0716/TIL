@@ -10,3 +10,11 @@ UTMというアプリケーションを使うと仮想環境下にUbuntuを立�
 
 #### このcaskって何？
 
+HomeBrew-CaskというHomeBrewの拡張機能らしい。
+
+普段みたいに` brew install `でインストールするのと違って、
+
+/Application/配下にインストールされる
+
+#### そうするとどうなるの？
+

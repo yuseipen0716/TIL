@@ -19,3 +19,9 @@ HomeBrew-CaskというHomeBrewの拡張機能らしい。
 #### そうするとどうなるの？
 
 MacBookのLaunchpadから起動できる（GUIのアプリケーションとしてインストールできている。)
+
+#### caskでインストールしたUTMをアップデート、アンインストール
+
+` brew upgrade --cask utm `
+
+` brew uninstall --cask utm `

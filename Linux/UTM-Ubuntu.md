@@ -38,6 +38,8 @@ MacBookのLaunchpadから起動できる（GUIのアプリケーションとし�
 
 ### 手順まとめ
 
+[こちら]: https://ubuntu.com/download/server/arm
+
 #### UTM　仮想マシン設定作成編
 1. まずはterminal上でhomebrewでUTMをインストール  
     1. ` $ brew install --cask utm `  
@@ -65,4 +67,11 @@ MacBookのLaunchpadから起動できる（GUIのアプリケーションとし�
 #### Ubuntu server インストール編
   
 1. 準備。ARM64版Ubuntu serverインストール用のISOイメージをダウンロード
+    1. ダウンロードは[こちら]から。今回利用するのはUbuntu 20.04.2 LTS
+1. UTM画面にもどります。
+1. 画面左側の仮想マシン一覧から先ほど作成した仮想マシンを選択。仮想マシンの詳細情報が出てくる。
+1. CD/DVDのところが(empty)となっている。そこをクリックし、Browseを選択。
+1. 先ほどダウンロードしたISOイメージを開いて、インストールメディアをマウント。
+1. 再生ボタンを押して仮想マシンを起動すると、Ubuntu server　のインストール画面が立ち上がる。
+1. Install Ubuntu Server　を選択 （インストール画面に移行するまで、ちょっと時間がかかります。）
 1. 

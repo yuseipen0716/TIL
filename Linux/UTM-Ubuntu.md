@@ -74,4 +74,18 @@ MacBookのLaunchpadから起動できる（GUIのアプリケーションとし�
 1. 先ほどダウンロードしたISOイメージを開いて、インストールメディアをマウント。
 1. 再生ボタンを押して仮想マシンを起動すると、Ubuntu server　のインストール画面が立ち上がる。
 1. Install Ubuntu Server　を選択 （インストール画面に移行するまで、ちょっと時間がかかります。）
-1. 
+1. 言語選択画面　　Englishを選択。他の言語がよければどうぞ。
+1. キーボード選択画面　　USキーボードを使用しているのでEnglishを選択したけれど、日本語配列を使っている人はJapaneseにするのかな？
+1. ネットワーク選択画面　　デフォルトはDHCP接続。固定IPがよければ　▶︎　を押す
+1. プロキシ設定　　デフォルトでOK
+1. ミラーアドレスの設定　デフォルトでOK
+1. ストレージの設定　　デフォルトでOK　　Guided storage configration / Storage configrationどちらも
+1. Profile 設定　　
+    1. Your name → ユーザーの本名？
+    1. Your server's name → サーバーの名前　（ex:ubuntu-server)
+    1. Pick a username → ログインするユーザーネーム
+    1. Choose a password → パスワード入力
+1. SSHの設定　　Install OpenSSH server を[X]にする。　（カーソルで選択してEnter押す）　→ Done
+1. Featured Server Snaps　　便利なオプションたち？ 特に選択せずDone
+1. Install はじまる。　時間かかります。コーヒー淹れて飲んでも時間が余る。
+1. 終わったら[Reboot] → Reboot選択すると途中から動かなくなることがあります。その時はUTMの

@@ -88,4 +88,12 @@ MacBookのLaunchpadから起動できる（GUIのアプリケーションとし�
 1. SSHの設定　　Install OpenSSH server を[X]にする。　（カーソルで選択してEnter押す）　→ Done
 1. Featured Server Snaps　　便利なオプションたち？ 特に選択せずDone
 1. Install はじまる。　時間かかります。コーヒー淹れて飲んでも時間が余る。
-1. 終わったら[Reboot] → Reboot選択すると途中から動かなくなることがあります。その時はUTMの
+1. 終わったら[Reboot] → Reboot選択すると途中から動かなくなることがあります。その時はUTMの電源ボタンみたいなところを押して強制終了。そのあと、仮想マシンを再起動する。その時は先ほどインストールメディアをマウントしたCD/DVDの部分で「Clear」を選択してインストールメディアをアンマウントしておく。
+1. ここまで問題なく進められていると、Ubuntu Server が起動する。
+    
+#### Ubuntu デスクトップ環境を追加
+    
+1. ` sudo apt install tasksel `
+1. ` sudo tasksel install ubuntu-desktop `
+1. ` sudo reboot ` で再起動する。
+1. デスクトップ環境を開いている状態でシャットダウンする時、デスクトップの電源アイコンを押してシャットダウンするとその後二度と再起動できない事件が発生した。これが原因じゃないかもしれないけど、今はterminalを開いて ` sudo shutdown -h now `　を入力してシャットダウンするようにしている。

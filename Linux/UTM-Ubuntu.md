@@ -64,3 +64,5 @@ MacBookのLaunchpadから起動できる（GUIのアプリケーションとし�
 
 #### Ubuntu server インストール編
   
+1. 準備。ARM64版Ubuntu serverインストール用のISOイメージをダウンロード
+1. 

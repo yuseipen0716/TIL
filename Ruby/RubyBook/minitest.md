@@ -11,6 +11,14 @@ class SampleTest < Minitest::Test
   end
 end
 ```
+
+クラスの名前はは○○TestというようにTestで終わる。または、Testで始まる名前をつけることが多いみたい。
+
+テストファイルの名前はsample_test.rbのようにクラスに合わせた名前にして、スネークケースで記述。
+
+クラスの名前はSampleTestのようにキャメルケースで。
+
+
 ### 使用するMinitestの検証メソッド
 
 ```ruby

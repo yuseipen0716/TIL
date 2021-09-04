@@ -22,4 +22,10 @@ githubでリモートリポジトリを作成して、自分のリポジトリ�
 7. `git push origin <new branch name>`
 8. githubのページに戻ってnew pull request みたいなボタン（緑色）を押す
 9. メッセージ入力
-10. プルリクエスト
+10. プルリクエスト　　
+
+### コンフリクト
+
+--- 
+
+

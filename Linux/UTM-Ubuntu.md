@@ -1,4 +1,4 @@
-## UTMを使用してUbuntuを立ち上げる
+## UTMを使用してUbuntu Server 20.04.2 LTSを立ち上げる
 
 M1MacbookではVirtualBoxがまだ使えないみたい。
 

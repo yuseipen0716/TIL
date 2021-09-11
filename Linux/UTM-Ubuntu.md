@@ -104,6 +104,8 @@ MacBookのLaunchpadから起動できる（GUIのアプリケーションとし�
     
     
 #### やっていて困ったことエラーらしきもの
+    
+##### 困ったこと１
 
 上の手順通りに進めたら、初回は難なくインストールできました。
     
@@ -119,3 +121,40 @@ EFI stub: Exiting boot services and installing virtual address map...
 ```
 
 という画面で固まってしまいました。
+    
+こちらについては色々試しましたが、再びデスクトップ版が立ち上がることなく、せっかく立ち上げたUbuntuくんは帰らぬ人になりました。
+    
+諦めて仮想マシンのデータを削除、UTMをuninstall、再度installし直して、upgradeしてUbuntuくんの立ち上げをやり直しました。
+    
+---
+
+##### 困ったこと2
+    
+続いて躓いた点ですが、Ubuntuくんを立ち上げ直している際、上記手順「Ubuntu serverインストール編13と14」の間ででてくる
+    
+```
+Selecting Continue below will begin the installation process and
+result in the loss og data on the disks selected to be formatted.
+    
+You will not be able to return to this or a previous screen once the
+installation has started.
+    
+Are you sure you want to continue?
+                           [No           ]
+                           [Continue     ]
+```
+
+というダイアログがあり、Continueを押して進むのですが、このダイアログが映ったままインストールが進んでしまうことがありました。
+    
+これが起こるパターンはどうやってもインストールが完了しませんでした。
+    
+この状態になった時は大人しくUTMを強制終了し、仮想マシンのデータを削除。再度仮想マシンを立ち上げてひたすらTryしました。
+    
+何度かやったとき、ダイアログが残らずにインストールが進むことがありました。
+    
+手順自体は常に同じでしたので、どうしてダイアログが残らなかったのかは不明ですが、このときはインストールができました。
+    
+ただ、インストール終了後のUpgrade中に作業が止まってしまいました。インストール自体は終わっていると思ったので、UTMを一旦終了させ、再起動しました。
+    
+そうしたら、Ubuntu serverは無事立ち上がりました。めでたし。
+

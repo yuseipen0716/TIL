@@ -27,10 +27,12 @@ fatal: adding files failed
     2. ただ、もう一度`git init`しても特に問題ないみたい。
 1. `git add .`
 2. `git commit -m "first commit"`
-3. そういえば今いるブランチ確認してなかった。`git branch`
-5. そうすると`master ~`と。待ってgithubで作られるデフォルトのブランチはmainだけど、今いるのはmasterになってる
-6. `git checkout -b main`
-7. 実行結果：`Switched to a new branch 'main'`
-8. そうしたらあとはpush
-9. `git push -u origin main`
-10. できた
+3. `git remote add origin https://github.com/<user-name>/<repository-name>.git` でGithub上のリモートリポジトリとローカルリポジトリを紐付け
+4. `git remote -v`でリモートリポジトリが正しく紐づけられているか確認
+5. そういえば今いるブランチ確認してなかった。`git branch`
+6. そうすると`master ~`と。待ってgithubで作られるデフォルトのブランチはmainだけど、今いるのはmasterになってる
+7. `git checkout -b main`
+8. 実行結果：`Switched to a new branch 'main'`
+9. そうしたらあとはpush
+10. `git push -u origin main`
+11. できた

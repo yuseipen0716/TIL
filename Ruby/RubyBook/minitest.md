@@ -56,3 +56,49 @@ require './プログラムのファイルが入っているディレクトリ/�
 
 ↑で書いた、ロジックのない固定の値は一つだけでなく、2つ目も書いた。（三角測量というみたい）  
 テストの対象が1つしかないと、対象のメソッドが仮実装のままなのか、ロジックを実装しているのかの判別がつかないから。
+
+### Minitestを動かした時に出たエラー
+
+```
+.
+├── lib
+│   ├── convert_hash_syntax.rb
+│   ├── convert_length.rb
+│   ├── fizz_buzz.rb
+│   ├── gate.rb
+│   ├── rgb.rb
+│   ├── sample.rb
+│   └── ticket.rb
+└── test
+    ├── convert_hash_syntax_test.rb
+    ├── convert_length_test.rb
+    ├── fizz_buzz_test.rb
+    ├── gate_test.rb
+    └── rgb_test.rb
+```
+となっている時、terminal上でルートディレクトリに入って`ruby test/rgb_test.rb`と打てば
+
+```
+ruby-book % ruby test/rgb_test.rb
+Run options: --seed 61528
+
+# Running:
+
+..
+
+Finished in 0.000359s, 5571.0316 runs/s, 16713.0947 assertions/s.
+2 runs, 6 assertions, 0 failures, 0 errors, 0 skips
+```
+といった風にテストが実行される
+
+そんな中、
+
+```
+Traceback (most recent call last):
+	2: from test/gate_test.rb:2:in `<main>'
+```
+とテストの画面にもならないエラーが出た。
+
+ソースコードを確認したら、**メソッド内の`end`が抜けていた!** 他にもスペルミス等でも起こるようなので、同じようなエラーが出た時にはソースコードを確認してみよう。
+
+

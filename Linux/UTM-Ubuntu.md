@@ -167,6 +167,8 @@ Are you sure you want to continue?
     
 そうしたら、Ubuntu serverは無事立ち上がりました。めでたし。
     
+--- 
+    
 
 #### Ubuntu Serverインストール後にやったこと　ーネットワーク編
 

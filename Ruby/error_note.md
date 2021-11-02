@@ -5,6 +5,7 @@
 
 - Minitestでtestが走らない
 - NoMethodError: undefined method 'method_name' for nil:NilClass
+- eachなどを使っているときに出るnilClassのエラー
 - 続きはここから
 
 ### エラーの詳細

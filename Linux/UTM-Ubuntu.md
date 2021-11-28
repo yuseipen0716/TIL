@@ -58,16 +58,16 @@ MacBookのLaunchpadから起動できる（GUIのアプリケーションとし�
 1. Create a New Virtual Machine を選択
 1. Name　のところを任意の仮想マシン名に変更
 1. Style　のところは「Operating system」にして、アイコンを選択
-1. <System>のところでArchitectureとメモリ容量を設定
+1. SystemのところでArchitectureとメモリ容量を設定
     1. Architecture　は「ARM64(aaarch64)」に変更
     2. Systemの部分が「QEMU 6.0 ARM Virtual Machine」に変更される。ここはいじらなくてよし。
     3. Memoryの部分はサーバとして使うだけであれば1024とかでもいいけど、デスクトップ版も使いたい時は4096以上がよい
-1. <Drives>のところで仮想マシンに接続するディスクを設定
+1. Drivesのところで仮想マシンに接続するディスクを設定
     1. New Drives　をクリックして、OSをインストールするディスクを作成
     1. Interface は　VirtlO
     1. SIZE　は　デフォルトの10GBでも良いと思うが、20GBくらいあると安心
     1. Createをクリック
-1. 同じく<Deives>から。インストール用のISOイメージをマウントするリムーバブルディスクを作成
+1. 同じくDeivesから。インストール用のISOイメージをマウントするリムーバブルディスクを作成
     1. New Drive　をクリックして、リムーバブルディスクを作成していく。
     1. Removable　にチェックをいれる。そうするとInterface　がUSBとなるはず。
     1. Saveをクリックして作成したディスクを保存

@@ -94,7 +94,7 @@ MacBookのLaunchpadから起動できる（GUIのアプリケーションとし�
 1. ストレージの設定　　デフォルトでOK　　Guided storage configration / Storage configrationどちらも
 1. Profile 設定　　
     1. Your name → ユーザーの本名？
-    1. Your server's name → サーバーの名前　（ex:ubuntu-server)
+    1. Your server's name → hostの名前　（ex:localhost)
     1. Pick a username → ログインするユーザーネーム
     1. Choose a password → パスワード入力
 1. SSHの設定　　Install OpenSSH server を[X]にする。　（カーソルで選択してEnter押す）　→ Done

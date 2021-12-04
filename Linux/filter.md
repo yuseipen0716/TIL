@@ -22,3 +22,6 @@ wc | 行数やバイト数を出力する
 
 ` du -b /bin/* | sort -n | tac | head -n 5 `みたいに書く
 
+
+`sort test_file | uniq -c | sort -rn `のようにすると、データファイルから出現回数のランキングを作成することができる。
+

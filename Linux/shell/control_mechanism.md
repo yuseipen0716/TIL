@@ -59,7 +59,7 @@ int1 -ge int2 | int1がint2以下
 -w file | fileが存在し、書き込みパーミッションが与えられている
 -x file | fileが存在し、実行パーミッションが与えられている
 file1 -nt file2 | file1の変更時刻がfile2より新しい
-file1 -おt file2 | file1の変更時刻がfile2より古い
+file1 -t file2 | file1の変更時刻がfile2より古い
 -z $PARAM | PARAMで渡された文字列が空文字列(長さが0）のときに真
 -n $PARAM | PARAMで渡された文字列の長さが1のときに真
 

@@ -6,6 +6,8 @@ ER図というのはEntity-Relationship、つまりエンティティ同士の�
 
 （メモ）
 
+---
+
 VScodeの拡張機能【Draw.io】でER図が書けるみたいです。
 
 install できたら、　`.dio`という拡張子のファイルを作成すれば使える。

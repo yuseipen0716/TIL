@@ -7,6 +7,12 @@
 コマンド違うよとか、これ便利だよっていうアドバイス等あれば教えていただきたいです。
 
 パスを通すという作業自体の理解も曖昧なので、その辺りも少しずつ勉強していきたい！
+---
+
+### 参考リンク集
 
 
 [vim 日本語ドキュメント](https://vim-jp.org/vimdoc-ja/index.html)
+
+#### Qiita
+[脱初心者を目指すVimmerにオススメしたいVimプラグインや.vimrcの設定](http://qiita.com/jnchito/items/5141b3b01bced9f7f48f)

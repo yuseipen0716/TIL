@@ -14,5 +14,7 @@
 
 [vim 日本語ドキュメント](https://vim-jp.org/vimdoc-ja/index.html)
 
+[ゴリラと学ぶvim講座](https://knowledge.sakura.ad.jp/21687/)
+
 #### Qiita
 [脱初心者を目指すVimmerにオススメしたいVimプラグインや.vimrcの設定](http://qiita.com/jnchito/items/5141b3b01bced9f7f48f)

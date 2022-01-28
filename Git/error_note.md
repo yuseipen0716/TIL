@@ -29,5 +29,10 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 1. `git push origin main`
   
 
+  
+追記：　これたぶん、terminal上でgit commitとかしてるんだけど、README.mdとかのファイルGitHub上でいじって、mainブランチの内容が、terminalで追跡しているものと異なるよ！っていうエラーかな？
+  
+fetch と mergeを合わせたpullコマンドで解決する気がします。
+
 
 

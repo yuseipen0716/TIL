@@ -93,5 +93,7 @@ foo {|a,b|
 1. `action_logger`実行。前半のbefore_action相当の部分（yield以前）が処理される
 1. yieldでブロックオブジェクトが呼び出され、`destroy`アクションが実行される
 1. アクション実行後、`action_logger`の続き、つまりafter_action相当の部分が実行される
+  
+[似たような質問](https://stackoverflow.com/questions/27932270/how-does-an-around-action-callback-work-an-explanation-is-needed)
 
 

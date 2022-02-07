@@ -76,7 +76,7 @@ foo {|a,b|
   
   おそらくこの、`set_callback`でコールバックの設定をしている？
   
-  ソースコードの[この部分](https://github.com/rails/rails/blob/5-2-stable/actionpack/lib/abstract_controller/callbacks.rb#L40)で`process_action(上記の例で言うdestroyアクション?`が呼ばれるたびに`run_callbacks`メソッドが動くようになっている(?)
+  ソースコードの[この部分](https://github.com/rails/rails/blob/5-2-stable/actionpack/lib/abstract_controller/callbacks.rb#L40)で`process_action(上記の例で言うdestroyアクション?)`が呼ばれるたびに`run_callbacks`メソッドが動くようになっている(?)
   
   ---
   

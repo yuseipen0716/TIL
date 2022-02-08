@@ -15,6 +15,10 @@ CRUD機能を実装してくれるみたい。
 
 ### 使い方
 
+`rails new sample`
+
+`cd sample`
+
 ` $ rails g scaffold モデル名 カラム名:データ型 カラム名:データ型 ・・・ `
 
 マイグレーションファイルが作成される。

@@ -15,9 +15,9 @@ CRUD機能を実装してくれるみたい。
 
 ### 使い方
 
-`rails new sample`
+`$ rails new sample`
 
-`cd sample`
+`$ cd sample`
 
 ` $ rails g scaffold モデル名 カラム名:データ型 カラム名:データ型 ・・・ `
 

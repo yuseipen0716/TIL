@@ -78,6 +78,8 @@ foo {|a,b|
   
   ソースコードの[この部分](https://github.com/rails/rails/blob/5-2-stable/actionpack/lib/abstract_controller/callbacks.rb#L40)で`process_action(上記の例で言うdestroyアクション?)`が呼ばれるたびに`run_callbacks`メソッドが動くようになっている(?)
   
+  before_action周りのソースコード探検している人はいました。 [railsのbefore_actionはどうやってうごいているか](https://qiita.com/kytiken/items/3655b4746a8cbbdc9833)
+  
   ---
   
 ### ここまでで考えられること

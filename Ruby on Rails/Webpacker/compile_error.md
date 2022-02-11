@@ -1,0 +1,2 @@
+## Webpacker:compileがちっともできない件
+

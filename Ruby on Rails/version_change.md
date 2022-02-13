@@ -27,3 +27,5 @@
     - `$ gem list rails`
 4. バージョンを指定してプロジェクトを立ち上げる
     - `$ rails _6.1.0_ new sample`
+
+[Rails アップグレードガイド](https://railsguides.jp/upgrading_ruby_on_rails.html)

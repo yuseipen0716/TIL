@@ -17,6 +17,8 @@ p.164<br>
 
 [SendGrid](https://sendgrid.kke.co.jp/)というメール送受信のクラウドサービスを使用した。
 
+チュートリアルやフレームワークとの連携については[こちら](https://sendgrid.kke.co.jp/docs/)にドキュメントが用意されていた。
+
 
 
 

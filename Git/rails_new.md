@@ -28,7 +28,7 @@ fatal: adding files failed
     1. `rails new`するとその中で初期化の設定はされるらしい。
     2. ただ、もう一度`git init`しても特に問題ないみたい。
 1. `git add .`
-2. `git commit -m "first commit"`
+2. `git commit -m "initial commit"`
 3. `git remote add origin https://github.com/<user-name>/<repository-name>.git` でGithub上のリモートリポジトリとローカルリポジトリを紐付け **(ここ！ここがちゃんとできてなくて苦労した！)**
 4. `git remote -v`でリモートリポジトリが正しく紐づけられているか確認
 5. そういえば今いるブランチ確認してなかった。`git branch`

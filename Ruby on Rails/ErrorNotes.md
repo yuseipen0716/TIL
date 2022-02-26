@@ -39,3 +39,11 @@ ActiveRecord::RecordInvalid in TicketsController#create
 ` local: false`　を入力フォームの部分に。こうしたらできたが、、、Ajaxとかその辺りについて、要勉強です
 
 ---
+
+### factory_botレコード追加時の Factory not registered:エラー
+
+factory_botを導入してモデルを作成。rails consoleでレコード追加のお試しをしようと`FactoryBot.create(:event)`を入力したら`Factory not registered: `のエラーがでた。
+
+調べてみると、spring stopを実行したり、spec_helper.rbの記述内容を変更したりする対応策が色々と紹介されていた。自分の場合はそれらを行なってもうまく行かず、factory_botのgemをインストールし直したら治った。
+
+rails consoleも再起動した。

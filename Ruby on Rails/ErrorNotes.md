@@ -36,6 +36,6 @@ ActiveRecord::RecordInvalid in TicketsController#create
 バリデーションエラーがでちゃうからsaveできなくて、エラーが出ている感じだけど、本当はerbで書いたdocument.getElementById("createTicketErrors").innerHTML = "<%= j render("errors", errors: @ticket.errors) %>"`これでバリデーションエラーを拾って、画面上に表示したい。
 
 ##### 解決策 -> Ajaxをoffに
-` local: false,`　を入力フォームの部分に。こうしたらできたが、、、Ajaxとかその辺りについて、要勉強です
+` local: false`　を入力フォームの部分に。こうしたらできたが、、、Ajaxとかその辺りについて、要勉強です
 
 ---

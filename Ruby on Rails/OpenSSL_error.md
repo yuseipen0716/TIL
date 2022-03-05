@@ -65,6 +65,7 @@ OpenSSL1.1.1lにはSSL_get1_peer_certicicateが存在せず、そんなSSL1.1.1l
  rbenvの方でバージョンをダウングレードすると、利用しているOpenSSLがもとの1.1に戻ってしまった… 
  
  はて、どうしたものか
-
+ 
+ rbenv等入れ直し→だめでした
 
 

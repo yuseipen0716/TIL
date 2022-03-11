@@ -1,4 +1,6 @@
-## symbol not found in flat namespace '_SSL_get1_peer_certificate' で詰まった話
+# symbol not found in flat namespace '_SSL_get1_peer_certificate' で詰まった話
+
+## Railsの新規プロジェクトがたちあげられなくなった
 
 `rails new`をして新規プロジェクトを立ち上げようとしたら構築中に
 
@@ -15,7 +17,10 @@ LoadError: dlopen(/Users/<username>/Desktop/project/rails_app/blog_sample/blog_s
 
 エラーの文をみるとpumaとかopensslがヒントか？
 
-`ruby -ropenssl -e "puts %Q[\ \ \ Build: #{OpenSSL::OPENSSL_VERSION}\n Runtime: #{OpenSSL::OPENSSL_LIBRARY_VERSION}]"`というコマンドを打つと
+```
+ruby -ropenssl -e "puts %Q[\ \ \ Build: #{OpenSSL::OPENSSL_VERSION}\n Runtime: #{OpenSSL::OPENSSL_LIBRARY_VERSION}]"
+```
+というコマンドを打つと
 
 ```
    Build: OpenSSL 1.1.1l  24 Aug 2021
@@ -29,6 +34,8 @@ errorのログには` symbol not found in flat namespace '_SSL_get1_peer_certifi
 OpenSSL1.1.1lにはSSL_get1_peer_certicicateが存在せず、そんなSSL1.1.1lで実行しているRubyを使用しているのに、OpenSSL3.0.xでPumaをコンパイルしているせいでエラーがでているみたい。
 
 つまり、Rubyで使用しているOpenSSLのバージョンを3.0.xに上げればいいってことらしい。
+
+### issueに乗っていた解決策
 
 そこで先ほどのリンク先で紹介されていた方法
 
@@ -58,14 +65,72 @@ OpenSSL1.1.1lにはSSL_get1_peer_certicicateが存在せず、そんなSSL1.1.1l
  
  ---
  
- ### 追記
+ ## 追記
  
  これだと、Ruby3.1.0でバージョンが固定？されてしまった。2.6.9で動かしているプログラム利用したくて2.6.9にrvmで落とせと言われたからその通りにしたらerror
+ 
+ `rvm install ruby-2.6.9`を実行しろという指示
+ 
+ ```
+$ rvm install ruby-2.6.9
+
+rvm reinstall ruby-2.6.9
+
+Gemset '' does not exist, 'rvm ruby-2.6.9 do rvm gemset create ' first, or append '--create'.
+project % rvm mount -r 2.6.9
+2.6.9 - #configure
+Found remote file 
+ruby-2.6.9 - #download
+No remote url detected for ruby-2.6.9.
+```
+
+gemsetがないというので`--create`オプションを追加
+
+```
+$ rvm install ruby-2.6.9 --create     
+
+ruby-2.6.9 - #removing src/ruby-2.6.9 - please wait
+Searching for binary rubies, this might take some time.
+No binary rubies available for: osx/12.2/arm64/ruby-2.6.9.
+Continuing with compilation. Please read 'rvm help mount' to get more information on binary rubies.
+Checking requirements for osx.
+Updating certificates bundle '/opt/homebrew/etc/openssl@1.1/cert.pem'
+Requirements installation successful.
+Installing Ruby from source to: /Users/makinomasayuki/.rvm/rubies/ruby-2.6.9, this may take a while depending on your cpu(s)...
+ruby-2.6.9 - #downloading ruby-2.6.9, this may take a while depending on your connection...
+ruby-2.6.9 - #extracting ruby-2.6.9 to /Users/makinomasayuki/.rvm/src/ruby-2.6.9 - please wait
+ruby-2.6.9 - #configuring - please wait
+ruby-2.6.9 - #post-configuration - please wait
+ruby-2.6.9 - #compiling - please wait
+Error running '__rvm_make -j8',
+please read /Users/makinomasayuki/.rvm/log/1647015154_ruby-2.6.9/make.log
+
+There has been an error while running make. Halting the installation.
+```
+`Error running '__rvm_make -j8'`のエラーが出る。
+
+### rbenvの方でバージョンを変えてみる
  
  rbenvの方でバージョンをダウングレードすると、利用しているOpenSSLがもとの1.1に戻ってしまった… 
  
  はて、どうしたものか
  
- rbenv等入れ直し→だめでした
+ ```
+$ rbenv install 2.6.9 
+
+Downloading openssl-1.1.1l.tar.gz...
+-> https://dqw8nmjcqpjn7.cloudfront.net/0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1
+Installing openssl-1.1.1l...
+Installed openssl-1.1.1l to /Users/makinomasayuki/.rbenv/versions/2.6.9
+```
+
+rbenv等入れ直してみるが、同じようにRuby2.6.9をインストールするとopenssl1.1.1lが使用されてしまい、`rails new`でエラーとなる。
+
+
+### 参考になるかもURL
+
+[Install Ruby on Mac M1 Apple Silicon with Rbenv](https://blog.francium.tech/install-ruby-on-mac-m1-apple-silicon-with-rbenv-9253dde4e34a) 
+
+[rbenv M1mac issue](https://github.com/rbenv/ruby-build/issues/1691#issuecomment-772224551)
 
 

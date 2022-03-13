@@ -126,11 +126,36 @@ Installed openssl-1.1.1l to /Users/makinomasayuki/.rbenv/versions/2.6.9
 
 rbenv等入れ直してみるが、同じようにRuby2.6.9をインストールするとopenssl1.1.1lが使用されてしまい、`rails new`でエラーとなる。
 
+### OpenSSL3.0.xでRubyをbuildするために
+
+[issue_by_MSP-Greg](https://github.com/puma/puma/issues/2790#issuecomment-1016958095) このissueにOpenSSL3.0.xでRubyがビルドできていない以上、このPumaでのエラーは解決できないようなことが書いてあったので、こちらを参考に`gem install openssl`してみる。
+
+```
+rails_app % gem install openssl
+Fetching openssl-3.0.0.gem
+Building native extensions. This could take a while...
+ERROR:  Error installing openssl:
+	ERROR: Failed to build gem native extension.
+
+    current directory: /Users/<user_name>/.rvm/gems/ruby-3.1.0/gems/openssl-3.0.0/ext/openssl
+/Users/<user_name>/.rbenv/versions/2.6.9/bin/ruby -I /Users/<user_name>/.rbenv/versions/2.6.9/lib/ruby/2.6.0 -r ./siteconf20220314-8798-1cb82kx.rb extconf.rb
+```
+
+これはこの間installしたrvmの残りカスなのだろうか。
+
+### pumaをダウングレードしたら良いのだろうか…？
+
+[こちらのissue](https://github.com/puma/puma/issues/2790#issuecomment-1030662172) をみると、pumaを5.5.2にしたら無事動いたというふうにも書いてありました。`rails new`した際に出るエラー分をみると、pumaは5.6.2を動かそうとしているようでしたので、もしかしたらこの方法も有用なのだろうか。
+
+→pumaのダウングレードの方法がいまいちわからず、、、
+
 
 ### 参考になるかもURL
 
 [Install Ruby on Mac M1 Apple Silicon with Rbenv](https://blog.francium.tech/install-ruby-on-mac-m1-apple-silicon-with-rbenv-9253dde4e34a) 
 
 [rbenv M1mac issue](https://github.com/rbenv/ruby-build/issues/1691#issuecomment-772224551)
+
+[issue by MSP-Greg](https://github.com/puma/puma/issues/2790#issuecomment-1009044847) 
 
 

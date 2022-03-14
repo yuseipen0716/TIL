@@ -145,6 +145,17 @@ ERROR:  Error installing openssl:
 
 →[ruby/openssl](https://github.com/ruby/openssl) こちらのREADMEを参考に、OpenSSLがインストール済みである場合の導入方法を試したら、gem installできた。
 
+```
+ruby -ropenssl -e "puts %Q[\ \ \ Build: #{OpenSSL::OPENSSL_VERSION}\n Runtime: #{OpenSSL::OPENSSL_LIBRARY_VERSION}]"
+```
+こちらで現在Rubyで使われているOpenSSLのバージョンを確認
+
+```
+   Build: OpenSSL 3.0.1 14 Dec 2021
+ Runtime: OpenSSL 3.0.1 14 Dec 2021
+ ```
+ !!! できた？
+
 ### pumaをダウングレードしたら良いのだろうか…？
 
 [こちらのissue](https://github.com/puma/puma/issues/2790#issuecomment-1030662172) をみると、pumaを5.5.2にしたら無事動いたというふうにも書いてありました。`rails new`した際に出るエラー分をみると、pumaは5.6.2を動かそうとしているようでしたので、もしかしたらこの方法も有用なのだろうか。

@@ -155,6 +155,18 @@ ruby -ropenssl -e "puts %Q[\ \ \ Build: #{OpenSSL::OPENSSL_VERSION}\n Runtime: #
  Runtime: OpenSSL 3.0.1 14 Dec 2021
  ```
  !!! できた？
+ 
+ 
+→できてなかった
+
+rails newすると、
+
+```
+rails aborted!
+LoadError: dlopen(/Users/makinomasayuki/Desktop/project/rails_app/test_app/.bundle/ruby/2.6.0/gems/puma-5.6.2/lib/puma/puma_http11.bundle, 0x0009): symbol not found in flat namespace '_SSL_get1_peer_certificate' - /Users/makinomasayuki/Desktop/project/rails_app/test_app/.bundle/ruby/2.6.0/gems/puma-5.6.2/lib/puma/puma_http11.bundle
+```
+
+参照している.bundle の中のRubyが2.6.0になっているのは何か関係しているのだろうか。
 
 ### pumaをダウングレードしたら良いのだろうか…？
 

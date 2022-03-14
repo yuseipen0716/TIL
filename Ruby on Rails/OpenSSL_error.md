@@ -147,7 +147,7 @@ ERROR:  Error installing openssl:
 
 [こちらのissue](https://github.com/puma/puma/issues/2790#issuecomment-1030662172) をみると、pumaを5.5.2にしたら無事動いたというふうにも書いてありました。`rails new`した際に出るエラー分をみると、pumaは5.6.2を動かそうとしているようでしたので、もしかしたらこの方法も有用なのだろうか。
 
-→pumaのダウングレードの方法がいまいちわからず、、、
+→pumaのダウングレードの方法がいまいちわからず→現在調査中
 
 
 ### 参考になるかもURL

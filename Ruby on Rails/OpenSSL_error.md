@@ -163,7 +163,7 @@ rails newすると、
 
 ```
 rails aborted!
-LoadError: dlopen(/Users/makinomasayuki/Desktop/project/rails_app/test_app/.bundle/ruby/2.6.0/gems/puma-5.6.2/lib/puma/puma_http11.bundle, 0x0009): symbol not found in flat namespace '_SSL_get1_peer_certificate' - /Users/makinomasayuki/Desktop/project/rails_app/test_app/.bundle/ruby/2.6.0/gems/puma-5.6.2/lib/puma/puma_http11.bundle
+LoadError: dlopen(/Users/<user_name>/Desktop/project/rails_app/test_app/.bundle/ruby/2.6.0/gems/puma-5.6.2/lib/puma/puma_http11.bundle, 0x0009): symbol not found in flat namespace '_SSL_get1_peer_certificate' - /Users/<user_name>/Desktop/project/rails_app/test_app/.bundle/ruby/2.6.0/gems/puma-5.6.2/lib/puma/puma_http11.bundle
 ```
 
 参照している.bundle の中のRubyが2.6.0になっているのは何か関係しているのだろうか。

@@ -96,14 +96,14 @@ Continuing with compilation. Please read 'rvm help mount' to get more informatio
 Checking requirements for osx.
 Updating certificates bundle '/opt/homebrew/etc/openssl@1.1/cert.pem'
 Requirements installation successful.
-Installing Ruby from source to: /Users/makinomasayuki/.rvm/rubies/ruby-2.6.9, this may take a while depending on your cpu(s)...
+Installing Ruby from source to: /Users/<user_name>/.rvm/rubies/ruby-2.6.9, this may take a while depending on your cpu(s)...
 ruby-2.6.9 - #downloading ruby-2.6.9, this may take a while depending on your connection...
-ruby-2.6.9 - #extracting ruby-2.6.9 to /Users/makinomasayuki/.rvm/src/ruby-2.6.9 - please wait
+ruby-2.6.9 - #extracting ruby-2.6.9 to /Users/<user_name>/.rvm/src/ruby-2.6.9 - please wait
 ruby-2.6.9 - #configuring - please wait
 ruby-2.6.9 - #post-configuration - please wait
 ruby-2.6.9 - #compiling - please wait
 Error running '__rvm_make -j8',
-please read /Users/makinomasayuki/.rvm/log/1647015154_ruby-2.6.9/make.log
+please read /Users/<user_name>/.rvm/log/1647015154_ruby-2.6.9/make.log
 
 There has been an error while running make. Halting the installation.
 ```
@@ -121,7 +121,7 @@ $ rbenv install 2.6.9
 Downloading openssl-1.1.1l.tar.gz...
 -> https://dqw8nmjcqpjn7.cloudfront.net/0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1
 Installing openssl-1.1.1l...
-Installed openssl-1.1.1l to /Users/makinomasayuki/.rbenv/versions/2.6.9
+Installed openssl-1.1.1l to /Users/<user_name>/.rbenv/versions/2.6.9
 ```
 
 rbenv等入れ直してみるが、同じようにRuby2.6.9をインストールするとopenssl1.1.1lが使用されてしまい、`rails new`でエラーとなる。

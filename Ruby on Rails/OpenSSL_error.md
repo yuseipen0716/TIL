@@ -236,6 +236,60 @@ LoadError: dlopen(/Users/makinomasayuki/vendor/bundle/ruby/2.6.0/gems/puma-5.5.2
 ```
 結局上記のようなエラーがでてしまう。opensslのバージョンは3.0.1が使われるようにはなっているが、、
 
+---
+
+あんまり良くないことなのかもしれないけれど、ためしにpumaを4.3.6に落としてみる
+
+→
+```
+$ bundle exec rails new test_app
+~
+~
+~
+✨  Done in 4.15s.
+Webpacker successfully installed 🎉 🍰
+```
+！！！　
+
+rails newで新しいプロジェクトの立ち上げに成功
+
+作成したプロジェクトのディレクトリに移動して`bin/rails s`でサーバーを立ち上げてみる
+
+```
+project/rails_app/test_app/vendor/bundle/gems/puma-5.6.2/lib/puma/puma_http11.bundle, 0x0009): symbol not found in flat namespace '_SSL_get1_peer_certificate' - /Users/<user_name>/Desktop/project/rails_app/test_app/vendor/bundle/gems/puma-5.6.2/lib/puma/puma_http11.bundle (LoadError)
+```
+
+pumaのバージョンが5.6.2になっていて、また同じエラーが出ている。rails new で立ち上げたプロジェクトの中のGemfileもいじってあげないといけないのだろうか
+
+`vim Gemfile`でpumaのバージョンを4.3.6にして`bundle install`
+
+```
+$ bin/rails s
+=> Booting Puma
+=> Rails 6.1.5 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Version 4.3.11 (ruby 2.6.9-p207), codename: Mysterious Traveller
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://127.0.0.1:3000
+* Listening on tcp://[::1]:3000
+```
+サーバーたちあがりました。
+
+bundle install で依存関係にあるgemのバージョンが変わったことによる影響か、railsのバージョンも当初と変わっているような気がするが、、
+
+```
+test_app % bundle exec puma --version
+puma version 4.3.11
+test_app % bundle exec rails -v
+Rails 6.1.5
+test_app % ruby -v
+ruby 2.6.9p207 (2021-11-24 revision 67954) [arm64-darwin21]
+```
+
+ひとまず、rbenvでrubyのバージョンを操作して、railsの新しいプロジェクトを立ち上げるところまでは成功した。細かい点でのちのち修正も必要になるだろうから、そこはおいおいやっていく。
+
 
 
 

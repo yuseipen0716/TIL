@@ -174,6 +174,45 @@ LoadError: dlopen(/Users/<user_name>/Desktop/project/rails_app/test_app/.bundle/
 
 →pumaのダウングレードの方法がいまいちわからず→現在調査中
 
+`gem install puma -v 5.5.2`でバージョン指定してpumaをインストールすることはできた。ただ、`puma --version`と打ってバージョンを確認しようとすると、
+
+```
+$ puma --version
+/Users/<user_name>/.rbenv/versions/2.6.9/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require': dlopen(/Users/<user_name>/.rvm/gems/ruby-3.1.0/gems/puma-5.5.2/lib/puma/puma_http11.bundle, 0x0009): symbol not found in flat namespace '_SSL_get1_peer_certificate' - /Users/<user_name>/.rvm/gems/ruby-3.1.0/gems/puma-5.5.2/lib/puma/puma_http11.bundle (LoadError)
+```
+というふうにエラーが出る。結局のところ、.rvm配下のパスを参照してしまっているのが原因か？？
+
+```
+$ gem environment
+```
+
+このように入力すると、gemの環境設定を呼び出せる
+
+```
+RubyGems Environment:
+  - RUBYGEMS VERSION: 3.0.3.1
+  - RUBY VERSION: 2.6.9 (2021-11-24 patchlevel 207) [arm64-darwin21]
+  - INSTALLATION DIRECTORY: /Users/<user_name>/.rvm/gems/ruby-3.1.0
+  - USER INSTALLATION DIRECTORY: /Users/<user_name>/.gem/ruby/2.6.0
+  - RUBY EXECUTABLE: /Users/<user_name>/.rbenv/versions/2.6.9/bin/ruby
+  - GIT EXECUTABLE: /opt/homebrew/bin/git
+  - EXECUTABLE DIRECTORY: /Users/<user_name>/.rvm/gems/ruby-3.1.0/bin
+  - SPEC CACHE DIRECTORY: /Users/<user_name>/.gem/specs
+  - SYSTEM CONFIGURATION DIRECTORY: /Users/<user_name>/.rbenv/versions/2.6.9/etc
+  - RUBYGEMS PLATFORMS:
+    - ruby
+    - arm64-darwin-21
+  - GEM PATHS:
+     - /Users/<user_name>/.rvm/gems/ruby-3.1.0
+     - /Users/<user_name>/.rvm/gems/ruby-3.1.0@global
+```
+
+
+
+
+
+
+
 
 ### 参考になるかもURL
 

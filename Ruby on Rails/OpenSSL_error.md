@@ -221,6 +221,10 @@ $ bundle exec rails new test_app
 ```
 またエラーは出たけれど、はじめのころとは違うエラーになっている。
 
+[mac Rails6 アプリ作成時エラーとサーバスタート時のエラーまとめ](https://qiita.com/miriwo/items/19c25034605c442e2fc7) こちらが参考にできるかな
+
+
+
 
 
 

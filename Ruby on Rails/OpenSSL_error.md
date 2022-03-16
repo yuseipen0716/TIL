@@ -223,6 +223,19 @@ $ bundle exec rails new test_app
 
 [mac Rails6 アプリ作成時エラーとサーバスタート時のエラーまとめ](https://qiita.com/miriwo/items/19c25034605c442e2fc7) こちらが参考にできるかな → x
 
+上記のbootsnapはGemfileにbootsnapを追加してbundle installすることで解決したが、
+
+```
+$ bundle exec rails new test_app
+~
+~
+~
+       rails  webpacker:install
+rails aborted!
+LoadError: dlopen(/Users/makinomasayuki/vendor/bundle/ruby/2.6.0/gems/puma-5.5.2/lib/puma/puma_http11.bundle, 0x0009): symbol not found in flat namespace '_SSL_get1_peer_certificate' - /Users/makinomasayuki/vendor/bundle/ruby/2.6.0/gems/puma-5.5.2/lib/puma/puma_http11.bundle
+```
+結局上記のようなエラーがでてしまう。opensslのバージョンは3.0.1が使われるようにはなっているが、、
+
 
 
 

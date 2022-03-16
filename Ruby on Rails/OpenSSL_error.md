@@ -207,6 +207,19 @@ RubyGems Environment:
      - /Users/<user_name>/.rvm/gems/ruby-3.1.0@global
 ```
 
+まだうまくいかない気もするけれど、今の状態で一度`rails new`してみる
+
+```
+$ bundle exec rails new test_app
+...
+...
+       rails  webpacker:install
+/Users/<user_name>/Desktop/project/rails_app/test_app/config/boot.rb:4:in `require': cannot load such file -- bootsnap/setup (LoadError)
+	from /Users/<user_name>/Desktop/project/rails_app/test_app/config/boot.rb:4:in `<top (required)>'
+	from bin/rails:4:in `require_relative'
+	from bin/rails:4:in `<main>'
+```
+またエラーは出たけれど、はじめのころとは違うエラーになっている。
 
 
 

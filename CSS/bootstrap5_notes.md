@@ -31,3 +31,11 @@ Bootstrapを使う機会もたまにあるだろう。一度実装したもの�
 `.text-center`
 
 buttonを右よせしたい時、`.float-end`でできた。
+
+---
+
+flex-shrink
+
+flexboxで要素を横並びにしたあと、必要に応じてアイテムのサイズを縮小させるときにつかう？みたい
+
+

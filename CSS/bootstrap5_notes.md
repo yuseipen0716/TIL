@@ -23,3 +23,11 @@ Bootstrapを使う機会もたまにあるだろう。一度実装したもの�
 →色の説明
 
 ---
+
+中央揃え
+
+`.mx-auto`
+
+`.text-center`
+
+buttonを右よせしたい時、`.float-end`でできた。

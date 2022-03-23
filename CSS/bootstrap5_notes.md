@@ -11,3 +11,9 @@ Bootstrapを使う機会もたまにあるだろう。一度実装したもの�
 →widthの設定
 
 ---
+
+[flex](https://getbootstrap.jp/docs/5.0/utilities/flex/)
+
+→flex-boxについて
+
+---

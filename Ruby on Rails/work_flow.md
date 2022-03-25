@@ -31,3 +31,11 @@ bootstrap導入
   - バージョンを指定したい時は指定して。bootstrap5からはjQueryとの依存関係がなくなったため、一緒にインストールしなくてもいいみたい。
 - `bin/yarn add @popperjs/core`
   - popperjsは必要みたい。
+
+- app/javascript/packs/application.jsに
+  ```
+  import "bootstrap"
+  import "bootstrap/scss/bootstrap.scss"
+  ```
+  を追加
+

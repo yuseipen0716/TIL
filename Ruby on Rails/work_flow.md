@@ -18,7 +18,7 @@
 ### 作業環境準備編
 （これはあくまで自分の場合だが）Gemfileの中のpumaの記述を見つけ、バージョンを4.3.6などに下げておく
 
-続いて、必要であればerbからhamlの移行作業を行う。
+続いて、必要であればerbからhamlの移行作業を行う。ERBを使う場合はそのままでよい。
 - `'gem hamlit-rails', '~> 0.2.3'` >> Gemfile　>> `bundle install`
 - `'gem html2haml', '~> 2.2.0'` >> Gemfile　>> `bundle install`
 - `bin/rails hamlit:erb2haml` >> `y` 

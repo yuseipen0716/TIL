@@ -19,10 +19,10 @@
 （これはあくまで自分の場合だが）Gemfileの中のpumaの記述を見つけ、バージョンを4.3.6などに下げておく
 
 続いて、必要であればerbからhamlの移行作業を行う。ERBを使う場合はそのままでよい。
-- `'gem hamlit-rails', '~> 0.2.3'` >> Gemfile　>> `bundle install`
-- `'gem html2haml', '~> 2.2.0'` >> Gemfile　>> `bundle install`
+- `gem 'hamlit-rails', '~> 0.2.3'` >> Gemfile　>> `bundle install`
+- `gem 'html2haml', '~> 2.2.0'` >> Gemfile　>> `bundle install`
 - `bin/rails hamlit:erb2haml` >> `y` 
-- Gemfile >> ~`'gem html2haml', '~> 2.2.0'`~ >> `bundle install`
+- Gemfile >> ~`gem 'html2haml', '~> 2.2.0'`~ >> `bundle install`
   - もうhtml2hamlは不要になったので消しておく
 
 bootstrap導入

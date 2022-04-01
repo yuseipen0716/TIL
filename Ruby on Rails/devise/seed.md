@@ -32,3 +32,31 @@ $ bin/rails db:seed:replant
 seeds.rbってgitの管理下に入っちゃうから、初期値のパスワードとかも公開されちゃうわけですか。
 
 seeds.rbの中から環境変数化したメールやパスを読み込むようにしておいた方がいい？？
+
+### 解決策
+
+結局、credentials.yml.encにemailやpasswordの情報を書き込んで、seeds.rbからアクセスできるようにした。
+
+credentialsに関しては[こちら](https://github.com/yuseipen0716/TIL/blob/main/Ruby%20on%20Rails/credentials.md)にまとめてある。
+
+```
+# credentials.yml.enc
+
+admin:
+  email: hogehoge@hoge
+  password: hogehoge
+```
+
+``` rb
+# config.seeds.rb
+
+EMAIL = Rails.application.credentials.admin[:email]
+PASSWORD = Rails.application.credentials.admin[:password]
+
+admins = Admin.new(:email => EMAIL, :password => PASSWORD)
+admins.save!
+```
+
+
+
+

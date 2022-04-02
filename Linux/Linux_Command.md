@@ -39,3 +39,12 @@
 ln -s $file_path $link_path
 ```
 
+---
+
+#### 連番でファイル作成
+
+```
+touch test{1..10}.text
+```
+
+とすると、test1.textから始める連番ファイルが作成される。

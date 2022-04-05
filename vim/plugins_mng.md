@@ -28,3 +28,22 @@ repo = '<github_name>/<repository_name>
 inoremap <silent> jj <ESC>
 ```
 これによって`jj`と打つだけでinsertモードを抜けてnormalモードに切り替えることができる。Escキーって地味に遠いからね。
+ 
+ ### プラグインをアンインストールしたいとき
+ 
+ tomlファイルからプラグインの記述を消して、以下を順に実行。
+ 
+```
+:call map(dein#check_clean(), "delete(v:val, 'rf')")
+```
+
+```
+:call dein#recache_runtimepath()
+```
+
+もし、更新等を自動化したいのであれば
+
+```
+let g:dein#auto_recache = 1
+```
+をinit.vimに追加。

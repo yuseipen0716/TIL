@@ -13,6 +13,12 @@ $ rails db:migrate
 
 OK
 
+カラムを複数追加するときは、こんなふうに書いているみたい。
+
+```
+$ rails generate migration AddDetailsToTitles price:integer author:string
+```
+
 ### カラムを削除したい時の手順
 
 ```

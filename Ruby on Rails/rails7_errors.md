@@ -25,7 +25,7 @@ EverydayRailsをサンプルコードを見ながらあ進めている。system 
   - `yarn install`
 - foreman gemのインストール
   - `gem install foreman`
-- サーバの軌道
+- サーバの起動
   - `bin/dev`
 - 必要であれば、rspecのコマンドの短縮
   - `bundle binstubs rspec-core`

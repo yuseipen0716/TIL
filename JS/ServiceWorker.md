@@ -31,3 +31,4 @@
 - [ネイティブアプリ風Webアプリ「PWA」を実現する3つの技術](https://knowledge.sakura.ad.jp/23201/)
 - [サーバーからブラウザを通じてデスクトップ通知する方法（Push API を利用）](https://laboradian.com/web-push/)
 - O'REILLY 第7版 JavaScript
+- [Web Fundamentals(ウェブアプリへのプッシュ通知の追加)](https://developers.google.com/web/fundamentals/codelabs/push-notifications)

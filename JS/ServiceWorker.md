@@ -32,3 +32,4 @@
 - [サーバーからブラウザを通じてデスクトップ通知する方法（Push API を利用）](https://laboradian.com/web-push/)
 - O'REILLY 第7版 JavaScript
 - [Web Fundamentals(ウェブアプリへのプッシュ通知の追加)](https://developers.google.com/web/fundamentals/codelabs/push-notifications)
+- [意外とカンタン！流行のWebプッシュ通知はJavaScriptでサクッと実装できる](https://www.webprofessional.jp/browser-notification-api/)

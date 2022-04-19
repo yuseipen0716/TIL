@@ -38,5 +38,5 @@ Webページを閲覧中ではないユーザーに対して何か通知をす�
 
 
 
-> 参考: O'RAILY 　ハンズオン JavaScript
+> 参考: O'REILLY 　ハンズオン JavaScript
 

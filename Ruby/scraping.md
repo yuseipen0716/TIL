@@ -94,6 +94,34 @@ driver.quit
 - 待機について。初めにサンプルプログラムを動かした際には検索ボタンをクリックした後のページ遷移を待つための待機処理を入れていなかったため、current_urlを吐き出させたところ、yahooのトップページのまま吐き出されていた。wait.untilには色々な指定の仕方があったが、クリック前後に処理を入れる、とかページ遷移前後に処理を入れるような操作をする場合、ライブラリ内のクラスを継承する形で実装しないといけない(?)ようだったので、別の方法(今回とった方法)で実装した。もっとスマートに書きたいところ。
 
 
+### shadow_root
+
+取得したい要素があって、classやcssセレクタを正しく(?)指定しても全然取得できない要素があった。Xpathを指定してもとれなくて、なんじゃこりゃってなった。
+
+dev_toolsを見てみる。サイトを更新して、入場した時の状態で確認すると、見たい情報は`shadow_root`というところに格納されていて、サイトに入った時は見えないようになっていた。
+
+どうやらこのshadow_rootの中身を取得するには2ステップくらい踏む必要があるみたいだった。
+``` ruby
+# まずは普通にサイトに入る
+driver.get('http://watir.com/examples/shadow_dom.html')
+```
+
+``` ruby
+# shadow_rootの親要素を取得する
+shadow_host = driver.find_element(id: 'shadow_host')
+```
+
+``` ruby
+# 先ほど取得したshadow_rootの親要素にshadow_rootメソッドを当てる
+shadow_root = shadow_host.shadow_root
+```
+
+``` ruby
+# あとは普通に要素を取得することができる
+shadow_content = shadow_root.find_element(id: 'shadow_content')
+```
+
+
 --- 
 ### 参考
 - [Seleniumクイックリファレンス](https://www.seleniumqref.com/api/webdriver_gyaku.html)

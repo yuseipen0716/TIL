@@ -98,3 +98,4 @@ driver.quit
 ### 参考
 - [Seleniumクイックリファレンス](https://www.seleniumqref.com/api/webdriver_gyaku.html)
 - [Seleniumチートシート [Ruby]](https://morizyun.github.io/web/selenium-cheat-sheet.html) 
+- [Selenium webdriverよく使う操作メソッドまとめ](https://qiita.com/mochio/items/dc9935ee607895420186)

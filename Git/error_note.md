@@ -3,7 +3,7 @@
 ### 目次
 ---
 - error: failed to push some refs to '<repository>'
-- 
+- error: pathspec '<commit-message>'' did not match any file(s) known to git
   
 ---
   
@@ -33,6 +33,14 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 追記：　これたぶん、terminal上でgit commitとかしてるんだけど、README.mdとかのファイルGitHub上でいじって、mainブランチの内容が、terminalで追跡しているものと異なるよ！っていうエラーかな？
   
 fetch と mergeを合わせたpullコマンドで解決する気がします。
+  
+### error: pathspec '<commit-message>'' did not match any file(s) known to git
+  
+windows10の環境下でgit add .してcommit しようとしたら出た
+  
+調べていたら解決策としてcommitメッセージはシングルクオートでなくダブルクォートで囲いましょうとあった。
+  
+まさにその通りでした。
 
 
 

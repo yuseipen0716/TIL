@@ -121,6 +121,70 @@ shadow_root = shadow_host.shadow_root
 shadow_content = shadow_root.find_element(id: 'shadow_content')
 ```
 
+### Xpath逆引き
+
+dev_toolsのconsoleに$x('<xpath>')と入力する。
+  
+### ページ遷移のための処理メモ
+  
+
+``` ruby
+# ========== ページ遷移のための処理 ==========
+# 次へ、のリンクしかない(初めのページ)はほかのページとxpathが違うので、下記の通り、2パターンのxpathを
+# 拾えるようにする。no such elementsで例外が出ないように、rescueでnilにしてあげる。
+begin
+  button_single = driver.find_element(:xpath, "")
+rescue
+  nil
+end
+
+begin
+  button_double = driver.find_element(:xpath, "")
+rescue
+  nil
+end
+
+# 取得できたボタンのうち、どちらかが「次へ」ボタンであればroop
+while button_single.text == "次へ" || button_double.text == "次へ"
+  # button_singleをifの条件に書くと少し厄介なことになるので、doubleのほうでひっかける。
+  # (2ページ目以降、つまり前へ、次へどちらのボタンもあるページではbutton_singleのxpathが
+  # 前へ、次へのbuttonタグを内包する配列のxpathとなっているため、button_singleはnilにならず、前へボタンを取得してしまい、
+  # ページが進まなくなる)
+  if button_double
+    button_double.click
+  else
+    button_single.click
+  end
+  sleep 1
+
+  # デバッグ用にURLを吐き出すようにしてある。実際に運用する際は消すこと。
+  puts driver.current_url
+
+  # 最終ページ(前へボタンしかない状態)でもbutton_doubleの変数の値が残ってしまい、roopから抜けないので、ここでreset
+  button_single = nil
+  button_double = nil
+  begin
+    button_single = driver.find_element(:xpath, "")
+  rescue
+    nil
+  end
+  
+  # デバッグ用にボタンテキストを吐き出すようにしてある。実際に運用する際は消すこと。
+  puts button_single.text
+
+  begin
+    button_double = driver.find_element(:xpath, "")
+  rescue
+    nil
+  end
+
+  break if button_double == nil
+
+  # デバッグ用にボタンテキストを吐き出すようにしてある。実際に運用する際は消すこと。
+  puts button_double.text
+end
+```
+
 
 --- 
 ### 参考

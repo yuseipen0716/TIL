@@ -47,3 +47,26 @@ factory_botを導入してモデルを作成。rails consoleでレコード追�
 調べてみると、spring stopを実行したり、spec_helper.rbの記述内容を変更したりする対応策が色々と紹介されていた。自分の場合はそれらを行なってもうまく行かず、factory_botのgemをインストールし直したら治った。
 
 rails consoleも再起動した。
+
+### [Windows]tzinfo-data is not present. Please add gem 'tzinfo-data' to your Gemfile and run bundle install (TZInfo::DataSourceNotFound)
+
+`rails s`や`rails g`などのコマンドを打つと上記のようなエラーが出る。Mac使っていた時はでなかったのでWindows固有のものでしょうか。
+
+調べてみると、railsプロジェクトを立ち上げた際にGemfileに記載される以下の行が原因らしかった。
+
+``` ruby 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+```
+
+[こちら](https://qiita.com/tatama/items/3f0f5e42cb5f75b53817)に4つの解決策が載っていた。
+
+1番上の「`gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]`の`, platforms: [:mingw, :mswin, :x64_mingw, :jruby]`部分を削除して`bundle update`するというもの。
+
+これでとりあえず解決。
+
+
+
+
+
+
+

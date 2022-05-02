@@ -44,4 +44,16 @@ $ mysql --version
 
 [こちら](https://jablogs.com/detail/31379)を参考にさせていただきました。
 
+dumpファイルが巨大すぎると、タイムアウトでerror: 2がでる。
+
+```
+$mysql -u xxx -p < backup.sql
+```
+ではなく、mysqlに入って、
+
+```
+mysql> source backup.sql
+```
+とするとよい。
+
 

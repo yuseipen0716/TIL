@@ -71,3 +71,9 @@ mysql> source backup.sql
 
 ---
 
+## dumpファイルからimport後、文字化けしている
+
+mysqlに入って`show variables like "chara%"`と打つと、現在の環境で使われている文字コードの一覧がでてくる。
+
+
+

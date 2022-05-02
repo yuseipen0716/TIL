@@ -44,6 +44,19 @@ $ mysql --version
 
 [こちら](https://jablogs.com/detail/31379)を参考にさせていただきました。
 
+(ページが無くなってしまうと困るためメモしておく）
+
+(docker-compose upしておいてください)
+
+コンテナを立ち上げているディレクトリで
+
+```
+sudo docker ps
+```
+して、MySQLDockerのコンテナIDを
+
+
+
 dumpファイルが巨大すぎると、タイムアウトでerror: 2がでる。
 
 ```
@@ -56,4 +69,5 @@ mysql> source backup.sql
 ```
 とするとよい。
 
+---
 

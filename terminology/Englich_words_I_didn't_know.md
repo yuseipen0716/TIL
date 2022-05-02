@@ -20,3 +20,7 @@ in order to | 〜するために
 expiration | 有効期限の
 urgency | 緊急度
 TTL(Time To Live) | 有効期限とか寿命的な感じかな？
+retrieve | 取得する
+assumption | 仮定
+suffixed | 付属した
+

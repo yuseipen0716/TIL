@@ -9,7 +9,7 @@
 - master(main,develop等、ブランチを切る元)ブランチに変更がないか確認(`git pull`)
 - ルールにもよるが、チケットごとにブランチを切る（ブランチを切る前に必ずpullして変更ないか確認)
 - developブランチから切る → `feature/oooo` というような名前の新規ブランチを作成して開発
-- ` 
+  - `git checkout develop` → `git pull` → `git checkout -b feature/oooo`
 - ローカルでadd, commit
 - リモートリポジトリにpush
 - PR出してレビューを受ける

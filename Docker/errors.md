@@ -17,4 +17,6 @@ portの3000番は使われてますよっていう感じでしょうか。
 - `docker ps`して該当するport番号のCONTAINER IDをコピー
 - `docker stop <CONTAINER ID>`で既に立ち上がっているものを落とす。
 
+これでも治らないときなどはDocker windowsをrestartすると直るときも。
+
 ---

@@ -22,6 +22,8 @@ $ docker-compose up -d
 
 まだメールは空だと思います。
 
+---
+
 ### action_mailerの設定(smtpを使用するように)
 
 config/environments/development.rbを編集する。mailcatcherの公式サイトのrailsプロジェクトのやり方を
@@ -32,6 +34,9 @@ config/environments/development.rbを編集する。mailcatcherの公式サイ�
   config.action_mailer.smtp_settings = { :address => "<Dockerコンテナ内からみたホストのIPアドレス>", :port => 1025}
   config.action_mailer.raise_delivery_errors = false
 ```
+---
+
+### Dockerコンテナ内からみたホストのIPアドレスを調べる
 
 Dockerコンテナ内からみたホストのIPアドレスを調べるのに少し難渋した。
 
@@ -65,4 +70,4 @@ windowsならこれでいけるはず。
 
 ---
 
-あとはアプリ側でメールを発信するような操作をすれば
+あとはアプリ側でメールを発信するような操作をすれば、localhost:1080のほうにメールが届いているはず。

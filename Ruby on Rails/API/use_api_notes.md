@@ -6,4 +6,7 @@
 
 X-API-Keyをヘッダーに渡してリクエストを送るとちゃんとレスポンスが返ってきた。
 
-X-API-Keyは環境変数化しておく。EnvironmentのところでNew
+X-API-Keyは環境変数化しておく。
+
+EnvironmentのところでNew
+

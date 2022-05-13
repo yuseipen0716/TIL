@@ -31,3 +31,32 @@ end
 ```
 
 こんな感じにしてあげればOK
+
+### 必要に応じてクラス名も編集
+
+もしクラス名が`Admin::`のように名前空間に追加するような記述が抜けているとエラーが出るので、
+
+``` ruby
+class Admin::UsersController < ApplicationController
+
+  def index
+  end
+
+end
+```
+
+のようにしてあげる。
+
+### viewファイルもグループ化
+
+ここまで作業を進めてきても、viewファイルの位置が`app/views/users/index.html.haml`
+
+のようになっていると、正しく参照できない。adminディレクトリにusers以下を格納してあげる必要がある。
+
+`app/views/admin/users/index.html.haml`
+
+これでいけるはず。
+
+
+
+

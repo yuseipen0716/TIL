@@ -12,8 +12,6 @@ Error response from daemon: driver failed programming external connectivity on e
 
 portの3000番は使われてますよっていう感じでしょうか。
 
-調べると解決策が出ていた
-
 - `docker ps`して該当するport番号のCONTAINER IDをコピー
 - `docker stop <CONTAINER ID>`で既に立ち上がっているものを落とす。
 

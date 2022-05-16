@@ -4,6 +4,7 @@
 ---
 - error: failed to push some refs to '<repository>'
 - error: pathspec '<commit-message>'' did not match any file(s) known to git
+- sshの設定をしたのに毎回user_nameとpasswordを聞かれる件
   
 ---
   
@@ -41,6 +42,37 @@ windows10の環境下でgit add .してcommit しようとしたら出た
 調べていたら解決策としてcommitメッセージはシングルクオートでなくダブルクォートで囲いましょうとあった。
   
 まさにその通りでした。
+  
+  ---
+  
+  ### sshの設定をしたのに毎回user_nameとpasswordを聞かれる件
+  
+  git pullするときなど、user_nameやpasswordを使用した認証はもう終了しているとのことだったが、いまだにgit pullするとuser_nameを聞かれるような状況で、うまくpullできなかった
+  
+  ```
+  $ git remote -v
+  ```
+  
+  を実行すると、今どのような方法でリモートリポジトリにアクセスしているかが表示される。
+  
+  `https----`みたいな表示の時は、http接続している。`git@github.com-----`な時はssh接続している。
+  
+  今回はsshのキー登録も済んでいるので、後者の方法で接続したい。そうすればuser_nameやpassフレーズを聞かれることもなかろう。
+  
+  すでに、どちらかの方法で接続方法が設定されている場合は
+  
+  ```
+  $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+  ```
+  という風に実行(今回はhttps接続→ssh接続に切り替え)
+  
+  その後、`$ git remote -v`を実行するとssh接続に切り替わっていることが分かった。
+  
+  git pullしたら、問題なく行えました。
+  
+  
+  
+  
 
 
 

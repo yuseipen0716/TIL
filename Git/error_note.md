@@ -70,6 +70,13 @@ windows10の環境下でgit add .してcommit しようとしたら出た
   
   git pullしたら、問題なく行えました。
   
+  #### 参考
+  
+  [リモートリポジトリを管理する](https://docs.github.com/ja/get-started/getting-started-with-git/managing-remote-repositories)
+  
+  ---
+  
+  
   
   
   

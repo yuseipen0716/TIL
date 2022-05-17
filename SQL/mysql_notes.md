@@ -40,6 +40,21 @@ mysql入っているか確認
 $ mysql --version
 ```
 
+docker環境下でmysqlに入ろうとしたとき、うまく入れないことがあった。
+
+その時打ったのは`mysql -u root -p`
+
+```
+$ docker-compose ps
+```
+で動いているプロセスを確認。mysqlのコンテナ名(NAME)をコピー
+
+```
+$ mysql -h <mysqlのコンテナ名> -u root -p
+```
+
+これで入れた。
+
 ### Docker環境下でmysqlダンプファイルを読み込む
 
 [こちら](https://jablogs.com/detail/31379)を参考にさせていただきました。

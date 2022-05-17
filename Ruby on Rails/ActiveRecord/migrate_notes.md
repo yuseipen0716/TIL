@@ -19,3 +19,24 @@ migrationしようと思ったらカラムが重複していますというエ�
 3. 1でつけたコメントアウトを外す
 4. `rails db:migrate`
 5. OK！ 念のため、`rails db:migrate:status`で確認
+
+
+### マイグレーションファイルを削除したいとき
+
+```
+bundle exec rails db:migration:status
+```
+
+で削除したいマイグレーションファイルのstatusがdownになっていることを確認。
+
+downになっていなければ、上記の方法でdownに
+
+statusがdownになっていることが確認できれば、ファイルを削除してOK
+
+### db/schema.rbに想定外のdiffがある
+
+db/schema.rbの内容は、現段階でのDBの状況を反映するため、developブランチやmaster, mainブランチと記載内容が異なる場合がある。
+
+ただ、schema.rbのファイルの内容に関して自分たちは何もできず、Railsがよしなにやってくれるので、内容を確認してcommitするしかない。
+
+

@@ -19,6 +19,21 @@ OK
 $ rails generate migration AddDetailsToTitles price:integer author:string
 ```
 
+↓
+
+``` ruby 
+class AddDetailsToTitles < ActiveRecord::Migration[5.1]
+  def change
+    add_column :<table名>, :<追加するcolumn名>, :<データ型>, <規約などを記述→>null: false, default: false, comment: "説明文書いてもよい"
+  end
+end
+```
+
+↓
+
+`rails db:migrate`
+
+
 ### カラムを削除したい時の手順
 
 ```

@@ -2,6 +2,8 @@
 
 railsのプロジェクトで画像のアップロードにcarrierwaveを使っていたので、使い方を調べた。
 
+[carrierwaveuploader/carrierwave](https://github.com/carrierwaveuploader/carrierwave)
+
 今回は基本的な使い方ではないかもしれない、console上での使用 + 画像ファイルは外部のURLから取得するような形での実装であったため少々調べるのに時間がかかった。
 
 ``` ruby

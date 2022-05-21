@@ -16,7 +16,7 @@ config/environment/development.rbを修正
 - config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 + config.file_watcher = ActiveSupport::FileUpdateChecker
 ```
-というように変更してあげるとcontrollerの変更がすぐに反映される。
+というように変更してあげるとcontrollerの変更がすぐに反映された。
 
 > 参考: [Rails アプリケーションを設定する](https://railsguides.jp/configuring.html)
 

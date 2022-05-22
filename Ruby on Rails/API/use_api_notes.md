@@ -2,6 +2,8 @@
 
 ### Postmanを使ってみた
 
+APIをお試しするためにPOSTMANというものがあるらしい
+
 参考: [認証とPostmanのAPI認証方法](https://qiita.com/morioka1206/items/9810c6a8bccec897c273)
 
 X-API-Keyをヘッダーに渡してリクエストを送るとちゃんとレスポンスが返ってきた。

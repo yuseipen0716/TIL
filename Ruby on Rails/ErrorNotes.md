@@ -68,6 +68,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ---
 
+### CSSが反映されない
+
+たまに起こるらしい。とりあえず、Chrome開いてCtrl+Uでソースみて、該当CSSファイルをクリック、自分が記述したところがソースに反映されているかは、それで確認できる。
+
 
 
 

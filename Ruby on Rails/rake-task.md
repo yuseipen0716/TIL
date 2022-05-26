@@ -36,4 +36,9 @@ taskファイルのnamespace部分、上記のtaskファイルでいるところ
 
 > 参考: [Rails における rake タスクの :environment について](https://qiita.com/FumiyaShibusawa/items/11035fc640bb36a615ad)
 
+taskを定期実行したい場合はwheneverというcronを利用したgemが使えるみたい。
+
+[【Rails】whenever による定時バッチ処理](https://qiita.com/j-sunaga/items/56811a39a572c3276b06)
+
+
 

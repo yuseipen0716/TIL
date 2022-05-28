@@ -25,4 +25,4 @@ article.save
 => true
 ```
 
-uploaderをmountするときの:image部分が:fileとかなら、remote_file_urlのようにメソッド名が変わるので注意。
+uploaderをmountするときの:image部分が:fileとかなら、remote_file_urlのようにメソッド名が変わるので注意!

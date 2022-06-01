@@ -27,6 +27,26 @@ npm ERR! enoent
 
 > 参考: [React.jsの環境構築(windows編)](https://zenn.dev/kagetugu/articles/eec07c364f9153)
 
+nvmで推奨バージョンのNode.jsを入れて、npm,yarnをinstall
+
+```
+yarn create react-app <app_name>
+```
+
+めちゃくちゃ時間かかったけど、エラー等でずに完了
+
+```
+$ cd <app_name>
+
+$ yarn start
+```
+
+で
+
+![image](https://user-images.githubusercontent.com/81737622/171358145-4ec69cd0-46b3-44cf-bc0a-32ce54866ffc.png)
+
+できた。
+
 
 
 

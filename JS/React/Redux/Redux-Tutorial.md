@@ -8,6 +8,22 @@ Reduxチュートリアルをやる中で学んだことなどを書き残して
 
 ここに学んだことをメモしていく。
 
+SUMMARY(Tutorial)
+
+- `configureStore`でRedux storeをつくるよ
+  - `configureStore`はreducer関数を名前付き引数として受け取るよ
+  - `configureStore`は自動でstoreをいい感じにセッティングしてくれるよ
+- ReactアプリケーションにRedux storeを提供するよ
+  - React-Reduxの<Provider>コンポーネントで<App />を囲うよ
+  - `<Provider store={store}>というふうに、storeをpropsとしてRedux storeに渡すよ
+- `createSlice`でslice reducerをつくるよ
+  - name(string)とstateの初期値、名付けたreducer関数を添えて`createSlice`を呼び出すよ。
+  - `Immer`ライブラリを使用していて、stateの更新はreducer関数内でmutateに行われるかもよ
+  - 生成されたslice reducerとaction creatorsをexportするよ
+- Reactコンポーネント内でReact-Reduxの`useSelector`, `useDispatch`hooksを使うよ
+  - storeからデータを読み取るには`useSelector`hookを使うよ
+  - `useDispatch`hookでdispatch関数を取得して、必要に応じてactionをdispatchするよ(割り当てる?的な?)
+
 ## Documentメモ
 
 ここはTutorial周辺のドキュメントの簡単な訳をメモしていく。
@@ -35,6 +51,16 @@ storeの作成後、React-Reduxの<Provider>コンポーネントで<App />コ�
 先ほど作成したRedux storeをimportして、Providerコンポーネントのpropsとしてstoreを渡す。
 
 #### Create a Redux State Slice
+  
+`src/features/counter/counterSlice.js`がなければ作成する。その中に`createSlice`APIをRTKからimportする。
+  
+sliceを作成するにあたって、文字列でnameとstateの初期値を定義してあげる。そんで、その中で、どのようにstateが更新されるのかを定義したreducer関数を書く。
+  
+Reduxではstateの更新はイミュータブルな方法で行うように記述する必要があるが、RTKの`createSlice`と`createReducer`のおかげで、mutatingな書き方で書いても大丈夫になる。
+  
+#### Add Slice Reducers to the Store
+ 
+`app/store.js`に戻って、先ほど作成した
 
 
 ### (Redux Essentials)Introduction

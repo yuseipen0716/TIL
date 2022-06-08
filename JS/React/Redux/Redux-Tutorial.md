@@ -12,7 +12,32 @@ Reduxチュートリアルをやる中で学んだことなどを書き残して
 
 ここはTutorial周辺のドキュメントの簡単な訳をメモしていく。
 
-### Introduction
+### Redux Toolkit Quick Start(Tutorial)
+
+ひとまずinstall 
+
+```
+yarn create react-app my-app --template redux
+```
+
+プロジェクト作成後、my-appディレクトリ内に移動
+
+#### Create a Redux Store
+
+`src/app/store.js`というファイルを作成(すでにあった)して、`configureStore`APIをReduxToolkitからimportしてくる。
+
+これでReduxのstoreが作成され、Redux DevToolsの拡張機能も自動的に設定される。
+
+#### Provide the Redux Store to React
+
+storeの作成後、React-Reduxの<Provider>コンポーネントで<App />コンポーネントをラップする。
+  
+先ほど作成したRedux storeをimportして、Providerコンポーネントのpropsとしてstoreを渡す。
+
+#### Create a Redux State Slice
+
+
+### (Redux Essentials)Introduction
 
 ここで学べる事
 

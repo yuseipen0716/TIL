@@ -91,4 +91,9 @@ mysql> source backup.sql
 mysqlに入って`show variables like "chara%"`と打つと、現在の環境で使われている文字コードの一覧がでてくる。
 
 
+## コマンド 参考リンク
+
+[よく使うMySQLコマンド&構文集](https://qiita.com/CyberMergina/items/f889519e6be19c46f5f4#%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E4%B8%80%E8%A6%A7%E3%81%AE%E8%A1%A8%E7%A4%BA)
+
+
 

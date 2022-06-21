@@ -15,5 +15,6 @@ ssh-agentが無効になっていることが原因らしかった。
 このあたりの記事、併せて読んでおこうね。
 
 - > [ssh公開鍵認証設定まとめ](https://qiita.com/ir-yk/items/af8550fea92b5c5f7fca)
+- > [unable to start ssh-agent service, error :1058](https://qiita.com/tmak_tsukamoto/items/c72399a4a6d7ff55fcdb)
 
 

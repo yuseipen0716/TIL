@@ -68,7 +68,7 @@ $ mysql -h <mysqlのコンテナ名> -u root -p
 ```
 sudo docker ps
 ```
-して、MySQLDockerのコンテナIDを
+して、MySQLDockerのコンテナIDをcopyしておく
 
 
 
@@ -77,7 +77,7 @@ dumpファイルが巨大すぎると、タイムアウトでerror: 2がでる�
 ```
 $mysql -u xxx -p < backup.sql
 ```
-ではなく、mysqlに入って、
+ではなく、上記の方法でmysqlに入って、`use <database名>`して、
 
 ```
 mysql> source backup.sql
@@ -86,9 +86,16 @@ mysql> source backup.sql
 
 ---
 
-## dumpファイルからimport後、文字化けしている
+### dumpファイルからimport後、文字化けしている
 
 mysqlに入って`show variables like "chara%"`と打つと、現在の環境で使われている文字コードの一覧がでてくる。
+
+### mysqldumpやりかた
+
+下記を参考にやってみた。
+
+- > [mysqldumpでバックアップ・リストアする](https://www.tohoho-web.com/ex/mysql-mysqldump.html)
+- > [MySQLバックアップのとり方](https://qiita.com/iika0220/items/01d4b8bde4c06cf13fec)
 
 
 ## コマンド 参考リンク

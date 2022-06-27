@@ -17,6 +17,8 @@
 - 何か作業ブランチで変更を加えcommit
 - `git push -f origin HEAD`として、force push（強制push）を行う
 
+> 参考: [git resetコマンドで任意のpushまで巻き戻す](https://qiita.com/aki4000/items/bec93ba631a83b687fb4#%E5%BC%B7%E5%88%B6%E7%9A%84%E3%81%ABpush%E3%81%99%E3%82%8B)
+
 ---
 
 ### チーム開発メモ

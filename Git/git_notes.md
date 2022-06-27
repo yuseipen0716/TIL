@@ -6,6 +6,19 @@
 
 ---
 
+### pushを取り消す方法
+
+大前提→チーム開発において、すでにdevelopであったり、**masterにmerge済のpush**に対してやると、そのcommitに依存した実装がぶっ壊れてしまい、大変なことになるため絶対やっちゃダメ。
+
+例えば、個人開発をしていて、このpushまで戻りたいという状況になった場合や、チーム開発の中でも自分だけが実装している開発ブランチ（まだmergeされていない状態）だったら使ってもいいかも。
+
+- まずはreset先を指定するために、どのcommitをHEADにしたいか考え、該当する箇所のcommit_idを拾ってくる。
+- `git reset <先ほど拾ってきたcommit_id> -hard`でソースファイルの変更分ごとreset
+- 何か作業ブランチで変更を加えcommit
+- `git push -f origin HEAD`として、force push（強制push）を行う
+
+---
+
 ### チーム開発メモ
 
 - master(main,develop等、ブランチを切る元)ブランチに変更がないか確認(`git pull`)

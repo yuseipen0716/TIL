@@ -47,6 +47,10 @@ git commit --amend -m '<修正後コミットメッセージ>'
 
 
 
+- >  [【gitコマンド】いまさらのrevert](https://qiita.com/chihiro/items/2fa827d0eac98109e7ee)
+- >  [マージコミットと通常のコミットのただ一つの違い](https://udomomo.hatenablog.com/entry/2019/07/14/235323)
+- >  [git merge 時は必ずマージコミットを作るようにする](https://neos21.net/blog/2017/06/18-01.html)
+
 
 
 

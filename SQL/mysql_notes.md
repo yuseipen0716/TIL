@@ -47,10 +47,10 @@ docker環境下でmysqlに入ろうとしたとき、うまく入れないこと
 ```
 $ docker-compose ps
 ```
-で動いているプロセスを確認。mysqlのコンテナ名(NAME)をコピー
+で動いているプロセスを確認。mysqlのコンテナID（ID）をコピー
 
 ```
-$ mysql -h <mysqlのコンテナ名> -u root -p
+$ mysql -h <mysqlのコンテナID> -u root -p
 ```
 
 これで入れた。
@@ -66,23 +66,31 @@ $ mysql -h <mysqlのコンテナ名> -u root -p
 コンテナを立ち上げているディレクトリで
 
 ```
-sudo docker ps
+docker ps
 ```
 して、MySQLDockerのコンテナIDをcopyしておく
 
-
-
-dumpファイルが巨大すぎると、タイムアウトでerror: 2がでる。
-
 ```
-$mysql -u xxx -p < backup.sql
+mysql -h <今コピーしたmysqlコンテナのID> -u root -p
 ```
-ではなく、上記の方法でmysqlに入って、`use <database名>`して、
+
+これで、 mysql> みたいなプロンプトになったらOK
 
 ```
-mysql> source backup.sql
+mysql> show databases;  (mysql> の部分は打たない)
 ```
-とするとよい。
+
+```
+mysql> use <今から使うdatabase名>;  (mysql> の部分は打たない)
+```
+バックアップ復元のもとの、dumpファイルは一旦railsアプリケーションのディレクトリに入れておく(appとか、pulicとかが並んでいるところ)
+
+```
+mysql> source <dumpファイルのファイル名>;
+```
+
+（とっっっても時間がかかるので、コーヒーでも飲んで待つ。)
+
 
 ---
 

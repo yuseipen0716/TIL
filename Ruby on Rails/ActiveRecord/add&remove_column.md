@@ -45,3 +45,7 @@ $ rails generate migration Remove<column_name>From<table_name> <column_name>:<da
 $ rails db:migrate
 ```
 
+> 参考: [Railsガイド マイグレーション](https://railsguides.jp/active_record_migrations.html)
+
+
+

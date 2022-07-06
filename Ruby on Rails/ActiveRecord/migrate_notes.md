@@ -39,4 +39,39 @@ db/schema.rbの内容は、現段階でのDBの状況を反映するため、dev
 
 ただ、schema.rbのファイルの内容に関して自分たちは何もできず、Railsがよしなにやってくれるので、内容を確認してcommitするしかない。
 
+---
+
+### keyが長すぎだとMySQLに怒られたとき
+
+カラムにindexを貼ろうとして、（今回はURLのカラム(string)にindexを貼りたかった）migrationファイルを作成し、db:migrateしたら怒られた
+
+```
+Mysql2::Error: Specified key was too long; max key length is 767 bytes: CREATE TABLE
+```
+
+keyが長すぎるんじゃ!767byte以内に収めろ、と言われている。
+
+調べてみると、こちら（[MySQL5.6でActiveRecordのencodingがutf8mb4だとKey長すぎ問題の対応](https://blog.mothule.com/ruby/rails/active-record/ruby-rails-activerecord-fix-mysql56-encode-utf8mb4-key-too-length))の記事が出てきた。
+
+原因としてはタイトルの通りである。RailsのActiveRecordにおけるstringはMySQLのVARCHAR(255)らしく、utf8mb4のencodingだと、MAXが1020bytesになってしまう(?)
+
+手っ取り早い解決策としては
+
+```ruby
+class CreateAdControlledPages < ActiveRecord::Migration[5.1]
+  def change
+    create_table :ad_controlled_pages do |t|
+      t.string :url, null: false, index: true, unique: true, limit: 191
+      t.integer :control_type, default: 0, null: false
+
+      t.timestamps
+    end
+  end
+end
+```
+というように、limit、文字数制限を設けてあげること。767 / 4 = 191.75なので、191をMAXの文字数としてあげればいいみたい。
+
+今回はこの方法を試したら、無事URLにindexを貼ることができました。あとは、どのカラムにindexを貼るかなどの検討も必要かもね。
+
+
 

@@ -47,6 +47,10 @@ end
 
 のようにしてあげる。
 
+この、Admin::UsersControllerの継承元がAdmin::BaseControllerになっていなかったことが原因でadmin側のviewファイルがうまく読み込めないことがあった。
+
+同様のエラーが出た際にはこのあたりも気にしてみて。
+
 ### viewファイルもグループ化
 
 ここまで作業を進めてきても、viewファイルの位置が`app/views/users/index.html.haml`

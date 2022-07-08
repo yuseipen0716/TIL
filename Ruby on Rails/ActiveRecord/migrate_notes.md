@@ -73,5 +73,24 @@ end
 
 今回はこの方法を試したら、無事URLにindexを貼ることができました。あとは、どのカラムにindexを貼るかなどの検討も必要かもね。
 
+↑↑のマイグレーションファイル、書き方間違えてた。
 
+正しくは
+
+```ruby
+class CreateAdControlledPages < ActiveRecord::Migration[5.1]
+  def change
+    create_table :ad_controlled_pages do |t|
+      t.string :url, null: false, limit: 191
+      t.integer :control_type, default: 0, null: false
+
+      t.timestamps
+    end
+    add_index :ad_controlled_pages, :url, unique: true
+  end
+end
+```
+こう。
+
+最初の書き方だと、indexは貼れていたっぽいけど、unique制約が機能していなかった。
 

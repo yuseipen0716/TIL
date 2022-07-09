@@ -4,6 +4,8 @@
 
 `rails db:migrate:status`を叩いてdown→upにしたいMigration IDをコピー
 
+直前のやつならrails db:rollbackでもdownにできる。downになっている時ならmigrationファイルを編集したり、削除することができる。
+
 ```
 $ (bundle exec) rails db:migrate:up VERSION=<Migration ID>
 ```

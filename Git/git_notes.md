@@ -67,5 +67,23 @@ git commit --amend -m '<修正後コミットメッセージ>'
 - >  [git merge 時は必ずマージコミットを作るようにする](https://neos21.net/blog/2017/06/18-01.html)
 
 
+---
+### git addでうっかり不要なファイルを追加し、気づかずcommit
+
+ファイル名を指定して、`git add`したつもりだったので、 `git add`のあとに`git status`を見ることもなくpushしたら、不要なファイルが含まれていた。
+
+```
+git add app/models/ooo.rb
+```
+としたつもりが、
+
+```
+git add app/models/ooo.rb app/
+```
+となっていた！
+
+app配下のファイルがすべてaddされていた。
+
+念のため、`git add`のあとは`git status`してcommit対象が正しいか、確認しようと思いました。
 
 

@@ -43,3 +43,15 @@ SSHの暗号通信では、公開鍵認証を用いている。また、パス�
 
 
 
+--- 
+
+### GithubからSSHキーを引っ張ってくる
+
+新しく仮想環境を立ち上げたりして、そのゲストOSにSSHしたいとき、authorized_keysにどうやって公開鍵を書き込むかで悩んだ。
+
+GitHubに登録してあるSSHキーをcurlコマンドで持ってくることができることを教えていただいたので、メモしておく。
+
+```
+curl https://api.github.com/users/<github_user_name>/keys | grep key | awk '{print $2 " " $3}' | sed s/\"//g >> ~/.ssh/authorized_keys
+```
+

@@ -55,3 +55,33 @@ GitHubに登録してあるSSHキーをcurlコマンドで持ってくること�
 curl https://api.github.com/users/<github_user_name>/keys | grep key | awk '{print $2 " " $3}' | sed s/\"//g >> ~/.ssh/authorized_keys
 ```
 
+
+--- 
+
+### SSH先のリモートシステムでコマンドを実行
+
+```
+ssh <hostname> <command>
+```
+
+としてあげれば、リモートシステム上でコマンドを実行することができる。
+
+#### リモートシステム上で実行したコマンドをローカルシステムに出力
+
+```
+ssh <hostname> <command> > <filepath>
+```
+
+#### リモートシステム上で実行したコマンドをリモートシステム上のファイルに出力
+
+```
+ssh <hostname> <command> \> <filepath>
+```
+
+こうすることで、ローカルでsshコマンドを実行する中で`>`がエスケープされ、リモート上で`>`が動作する
+
+
+
+
+
+

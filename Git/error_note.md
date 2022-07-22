@@ -76,6 +76,25 @@ windows10の環境下でgit add .してcommit しようとしたら出た
   
   ---
   
+  ### git pull => Not possible to fast-foward のエラーが出てpullできない
+  
+  Aブランチから切ったBブランチにおいて、Aブランチの新規変更分をBに反映させたいときに、`git pull origin A`しようとしたら
+  
+  ```
+  fatal: Not possible to fast-forward, aborting.
+  ```
+  
+  みたいなエラーが出てpullできないことがあった。
+  
+  git pullしてリモートから取り込もうとしているコミットより新しいコミットをローカルリポジトリでしてしまっているのが原因？
+  
+  調べてみると、`git fetch`と`git rebase`を実行してあげたらいいらしい。
+  
+  ```
+  git pull origin A --rebase
+  ```
+  としてあげると無事pullできた。この部分でコンフリクトが発生してしまう場合もある。
+  
   
   
   

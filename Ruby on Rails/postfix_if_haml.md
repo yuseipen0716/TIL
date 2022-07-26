@@ -15,3 +15,8 @@ hamlで後置ifを書くのは初めて、というかできるかわからな�
 みたいに書いたらできました。
 
 正直、可読性は下がると思うのでご利用は計画的に。あと、ちゃんとコメント入れた方がいいかも
+
+
+[【Rails6, haml】クラス名にindexをつける方法【each_with_indexまたはeach.with_index】](https://qiita.com/pharma_tech3/items/1d9bf30432f639f35152)
+
+こちらもhamlでクラス名を書くときに役に立つときがあった

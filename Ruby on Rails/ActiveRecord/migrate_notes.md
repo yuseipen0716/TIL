@@ -4,6 +4,8 @@
 
 `rails db:migrate:status`を叩いてdown→upにしたいMigration IDをコピー
 
+migrationのVERSIONは`rails db:version`でも教えてくれる。
+
 直前のやつならrails db:rollbackでもdownにできる。downになっている時ならmigrationファイルを編集したり、削除することができる。
 
 ```

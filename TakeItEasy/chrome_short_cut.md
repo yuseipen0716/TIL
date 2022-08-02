@@ -15,3 +15,8 @@ Ctrl + Shift + PgUp(PgDn) | タブを右(左)に移動
 
 
 > 参考[Chromeのキーボードショートカット](https://support.google.com/chrome/answer/157179?hl=ja&co=GENIE.Platform%3DDesktop)
+
+
+ショートカットではないけれど、開発者ツール >> ページが表示されている方の三点リーダーをクリックした中にあるメニューから、ページ全体の長いスクショが取れます。（これまで、
+
+スクショを切って貼ってしてた。。）

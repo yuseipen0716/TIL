@@ -72,6 +72,48 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 たまに起こるらしい。とりあえず、Chrome開いてCtrl+Uでソースみて、該当CSSファイルをクリック、自分が記述したところがソースに反映されているかは、それで確認できる。
 
+今まで経験した原因
+
+- 参照しているlayoutのファイルが違った（controllerのファイルでrenderingするlayoutファイルが別で指定されていた)(新しくページを作成する際にほかのページで指定しているlayoutを指定しなかったのが原因だった。
+- controllerの継承元が既存のファイルたちと異なっていた
+
+---
+
+### デプロイ時にUglifier::Error: Unexpected token: keyword (const)のエラーが出て、デプロイできない
+
+デプロイする際に
+
+```
+Uglifier::Error: Unexpected token: keyword (const). To use ES6 syntax, harmony mode must be enabled with Uglifier.new(:harmony => true).
+```
+
+というエラーが出て、デプロイに失敗した。
+
+RailsではUgrifierというgemでJSを圧縮して軽量化しているらしいが、これがES5までしか対応していないことが原因らしい。
+
+エラー分の最後にもあるように、`Ugrifier.new(:harmony => true)`の設定をする必要がある。
+
+config/environments/production(staging).rbの
+
+```
+  # Compress JavaScripts and CSS.
+  config.assets.js_compressor = :uglifier
+```
+
+の部分を
+
+```
+  # Compress JavaScripts and CSS.
+  config.assets.js_compressor = Ugrifier.new(:harmony => true)
+```
+
+と変更してあげると、ES6にも対応するそうです。
+
+最初にエラーが出た際には、緊急処置で該当のconstをvarに修正するような力業でデプロイしてしまった。
+
+既存のアプリでずっとvarキーワードが使われている場合、config.assets.js_compressor = Ugrifier.new(:harmony => true)`の設定により、どのような影響が出るのかは調べておきたい。
+
+---
 
 
 

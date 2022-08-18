@@ -45,3 +45,14 @@ end
 あとは、orderByで並び替えをして、ランキング形式にしてデータを取得できるようにするなど、工夫はいっぱいできる。
 
 GCPでの操作（プロジェクト作成とか、認証情報の入力とか）のことも備忘録として残しておいた方がよさそう。
+
+
+### 参考
+- [google-api-ruby-client/generated/google-apis-analyticsreporting_v4/OVERVIEW.md](https://github.com/googleapis/google-api-ruby-client/blob/main/generated/google-apis-analyticsreporting_v4/OVERVIEW.md)
+- [GoogleAnalytics>>ReportingAPI>>v4>>レポートの作成](https://developers.google.com/analytics/devguides/reporting/core/v4/basics?hl=ja#reports)
+- [RubyでGoogle アナリティクス Reporting API v4を使って、本日のページごとのユーザ数を取得する](https://shingo-sasaki-0529.hatenablog.com/entry/google_analytics_api_by_ruby)
+- [Google Analytics APIを使ってブログのPV数を見る](https://www.nogawanogawa.work/entry/google_analytics_api)
+
+
+
+

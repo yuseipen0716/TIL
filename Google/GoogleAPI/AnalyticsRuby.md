@@ -46,6 +46,25 @@ end
 
 GCPでの操作（プロジェクト作成とか、認証情報の入力とか）のことも備忘録として残しておいた方がよさそう。
 
+### そういえば
+
+google-api-clientのgemをinstallしようと思い、Gemfileに記述後、bundle installしたら、下記のようなメッセージが出た。
+
+```
+Post-install message from google-api-client:      
+*******************************************************************************    
+The google-api-client gem is deprecated and will likely not be updated further.   
+
+Instead, please install the gem corresponding to the specific service to use.   
+For example, to use the Google Drive V3 client, install google-apis-drive_v3.       
+For more information, see the FAQ in the OVERVIEW.md file or the YARD docs.  
+*******************************************************************************  
+```
+
+詳細については[こちら](https://github.com/googleapis/google-api-ruby-client/blob/main/google-api-client/OVERVIEW.md) に記載されていた。
+
+google-api-clientとして使うというより、各API個別でrequireして使うような感じになるみたい。上記のコードもそのようにして記載した。
+
 
 ### 参考
 - [google-api-ruby-client/generated/google-apis-analyticsreporting_v4/OVERVIEW.md](https://github.com/googleapis/google-api-ruby-client/blob/main/generated/google-apis-analyticsreporting_v4/OVERVIEW.md)

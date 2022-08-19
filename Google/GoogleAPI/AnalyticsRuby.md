@@ -65,6 +65,9 @@ For more information, see the FAQ in the OVERVIEW.md file or the YARD docs.
 
 google-api-clientとして使うというより、各API個別でrequireして使うような感じになるみたい。上記のコードもそのようにして記載した。
 
+### GCPでの準備
+時系列はめちゃくちゃだが、ここにメモを残しておく
+
 
 ### 参考
 - [google-api-ruby-client/generated/google-apis-analyticsreporting_v4/OVERVIEW.md](https://github.com/googleapis/google-api-ruby-client/blob/main/generated/google-apis-analyticsreporting_v4/OVERVIEW.md)

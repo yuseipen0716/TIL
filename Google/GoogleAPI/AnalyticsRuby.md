@@ -68,6 +68,8 @@ google-api-clientとして使うというより、各API個別でrequireして�
 ### GCPでの準備
 時系列はめちゃくちゃだが、ここにメモを残しておく
 
+- プロジェクトを作成
+
 
 ### 参考
 - [google-api-ruby-client/generated/google-apis-analyticsreporting_v4/OVERVIEW.md](https://github.com/googleapis/google-api-ruby-client/blob/main/generated/google-apis-analyticsreporting_v4/OVERVIEW.md)

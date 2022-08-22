@@ -72,3 +72,19 @@ Minitestを実行すると、上記のようなエラーが出た。
 この部分を修正しましたら、無事テストも通りました。
 
 ---
+
+### Windows Rubyの最新バージョンが入れられない
+
+Windows10のWSL2環境でRubyをローカルで使用して試したいことがあり、以前Macで作成したRailsプロジェクトをcloneしてきたのだが、Rubyのバージョンが違うから、installしてくれというメッセージが出た。
+
+rbenvも入っていなかったので、`sudo apt install rbenv`でinstallをして、`rbenv install --list`でinstall可能なバージョンを確認したのだが、所望するバージョンが見つからない。
+
+rbenvをupgrade等してみてもうまくいかず、調べてみた。
+
+#### そもそもruby-buildがちゃんとinstallできていなかった
+
+[こちら](https://github.com/rbenv/ruby-build) のinstallガイドに従って、rbenvのpluginとしてinstallした。
+
+そうしたら、最新版のRubyも`rbenv install --list`に出てくるようになった。めでたし。
+
+---

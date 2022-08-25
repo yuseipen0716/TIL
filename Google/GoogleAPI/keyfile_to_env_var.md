@@ -204,6 +204,6 @@ Workloar Identity連携については[こちらhttps://christina04.hatenablog.c
 - [GCPのサービスアカウントのKeyfile.jsonを環境変数で管理する](https://zenn.dev/dashi296/articles/02a42890f0e6bf)
 - [rubyからスプレッドシートに読み書きする](https://zenn.dev/cumet04/scraps/c471e4aacaa448)
 - [google-auth-libraly-ruby UserCredential](https://github.com/googleapis/google-auth-library-ruby#example-service-account:~:text=Google%20Compute%20Engine.-,User%20Credentials,-The%20library%20also)
--[RubyでGoogle アナリティクス Reporting API v4を使って、本日のページごとのユーザ数を取得する](https://shingo-sasaki-0529.hatenablog.com/entry/google_analytics_api_by_ruby)
+- [RubyでGoogle アナリティクス Reporting API v4を使って、本日のページごとのユーザ数を取得する](https://shingo-sasaki-0529.hatenablog.com/entry/google_analytics_api_by_ruby)
 
 

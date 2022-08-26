@@ -86,4 +86,7 @@ app配下のファイルがすべてaddされていた。
 
 念のため、`git add`のあとは`git status`してcommit対象が正しいか、確認しようと思いました。
 
+---
+
+### git revertに注意
 

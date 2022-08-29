@@ -104,6 +104,14 @@ git fetchコマンドは、リモートリポジトリの最新のものをロ�
 これを実行しただけでは、ローカルのファイルには何の変更も起こらない。
 
 ### git merge
+git fetchでとってきた、リモート追跡ブランチの追加分をローカルブランチに追加する。
+
+`git merge origin/master`というように記述。
+
+この`git fetch`と`git merge origin/master`を組み合わせたのが、`git pull origin master`
+
+### git pull --rebase origin master
+
 
 
 

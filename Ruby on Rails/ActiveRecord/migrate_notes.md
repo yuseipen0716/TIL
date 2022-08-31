@@ -37,6 +37,30 @@ downになっていなければ、上記の方法でdownに
 
 statusがdownになっていることが確認できれば、ファイルを削除してOK
 
+migrationのコミットをresetやrevertした等の理由から、
+
+```
+up     20220726101239  ********** NO FILE **********
+```
+こんな状態で残ってしまった場合の解決法→ [【Ruby on Rails】 　NO FILEのmigrationファイル削除する](https://qiita.com/takeshi075/items/3e55615c9f10b3f8731e)
+
+#### 簡単に手順をメモしておく
+- `bin/rails db:migrate:status`でNO FILEとなっているmigrationのVERSIONをチェック(今回は例として`20220726101239`とする)
+- `vi db/migrate/20220726101239_tmp.rb`で仮ファイルを作成する。(このファイルは後で消します)
+- ```ruby
+  class Tmp < ActiveRecord::Migration[5.1] # <- Railsのバージョンをここに記載
+    def change
+    end
+  end
+  ```
+- `bin/rails db:migrate:status`で先ほどのNO FILE部分がTmpに代わっていることを確認
+- `bin/rails db:migrate:down VERSION=20220726101239`でTmpのstatusをdownにする。念のため、`bin/rails db:migrate:status`で確認
+- statusがdownになっているのを確認したら、`rm -rf db/migrate/20220726101239_tmp.rb`でtmpファイルを削除
+- `bin/rails db:migrate:status`でNO FILEがなくなっているかどうかを確認。
+
+以上
+
+
 ### db/schema.rbに想定外のdiffがある
 
 db/schema.rbの内容は、現段階でのDBの状況を反映するため、developブランチやmaster, mainブランチと記載内容が異なる場合がある。

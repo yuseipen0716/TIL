@@ -95,6 +95,8 @@ windows10の環境下でgit add .してcommit しようとしたら出た
   ```
   としてあげると無事pullできた。この部分でコンフリクトが発生してしまう場合もある。
   
+  [git pull実行時にNot possible to fast-forwardエラーが発生した場合の対応](https://qiita.com/Lisphilar/items/3d9891b98eb04019aed4)
+  
   
   
   

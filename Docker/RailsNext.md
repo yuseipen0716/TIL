@@ -103,7 +103,7 @@ Railsの方の準備
 $ docker-compose run --rm api bundle exec rails new . --api -d mysql
 ```
 
-```
+```ruby
 default: &default
   adapter: mysql2
   encoding: utf8mb4

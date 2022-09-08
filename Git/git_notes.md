@@ -88,6 +88,26 @@ app配下のファイルがすべてaddされていた。
 
 ---
 
+### git push -> 間違ったuser.nameでpushしちゃった
+仕事用のアカウントなどを作成した場合、git config --localで作業リポジトリのgit configを変更しておかないと、privateのgithubアカウントでpushしてしまうことになる。
+
+その時に行った手順
+
+- まずはPJのことを相談させてもらっている方に連絡
+- git reset、git push -f等の操作を行っても大丈夫か確認をとる
+
+以下、↑がOKだった場合の手順です。
+- `git push -f origin <戻したいcommit_id>:<branch名>`
+- `git reset --soft <commit_id>`
+- `git config --local user.name "<right_user_name>"`
+- `git config --local user.email "<right_user_email>"`
+- `git config --local -l`
+- `git config -l`
+- 再度commit + push
+
+---
+
+
 ### git pull origin master と git pull --rebase origin master
 
 #### git fetch

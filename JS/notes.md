@@ -49,4 +49,3 @@ int =  +str
 ### 真偽値
 JavaScriptだと数字の0がfalseという扱いになる。そのため、配列型の存在チェックで`if (array.length !== 0)`みたいな条件を見かけるのかな
 
-Rubyだと、`if array`だけで済むから違和感がすごい。

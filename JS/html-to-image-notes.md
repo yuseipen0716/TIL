@@ -35,7 +35,7 @@ html2canvasではignoreしたい要素を指定することができたので、
 の質問の回答を参考に修正。
 
 
-```javascritp
+```javascrip
 import React, { useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
 

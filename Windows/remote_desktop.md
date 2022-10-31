@@ -44,3 +44,7 @@ Host remote
 ```
 この状態にしておけば`ssh remote`を実行するだけで、リモートデスクトップの準備が整う。
 
+
+### 参考
+- [【Windows Server 2019】SSH ポートフォワーディング（トンネリング）経由で、リモートデスクトップ接続する。](https://zapping.beccou.com/2021/08/21/using-ssh-port-forwarding-tunneling-about-remote-desktop-connection/#ssh-4)
+- [Windows10に公開鍵認証でssh接続，Tensorboard表示の備忘録](https://zenn.dev/mitsu_h/articles/qiita-20201030-16a0dca9d43a50846ed0)

@@ -76,6 +76,28 @@ const hoge = function() {
 
 ---
 
+### 関数の戻り値
+ごく基礎的な話だけど、Rubyと少し違いがあって最初戸惑ったので、メモ。
+
+```javascript
+const hoge = function() {
+  console.log('hoge')
+}
+```
+この関数の場合はコンソールに出力をするだけだが、関数内にreturn文を記述することで、関数に戻り値を持たせることができる。
+
+```javascript
+const hoge = function() {
+  return 'hoge';
+};
+```
+このような関数式を作成した場合、以下のようにすると、関数の戻り値をコンソールに出力できる
+```javascript
+console.log(hoge());
+
+=> 'hoge'
+```
+
 
 
 

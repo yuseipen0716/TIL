@@ -98,6 +98,27 @@ console.log(hoge());
 => 'hoge'
 ```
 
+### デストラクチャリング
+
+オブジェクトを変数に代入したり、受け取る際に、必要なプロパティのみ取捨選択できる機能
+
+コードサンプル->Reactハンズオンラーニングのものを引用
+```javascript
+const sandwich = {
+  bread: "dutch crunch",
+  meat: "tuna",
+  cheese: "swiss",
+  toppings: ["lettuce", "tomato", "mustard"]
+};
+
+const { bread, meat } sandwich;
+
+console.log(bread, meat); // => dutch crunch tuna
+```
+
+Reactで書かれたコードを読んでいるとよく見かける気がする。最初、これなんだ？って躓いたのでメモ
+
+
 
 
 

@@ -44,6 +44,28 @@ Host remote
 ```
 この状態にしておけば`ssh remote`を実行するだけで、リモートデスクトップの準備が整う。
 
+### 接続する
+クライアント側のPCで「リモートデスクトップ接続」を立ち上げる。
+
+コンピュータ名のところに`localhost:3389`と入力し、資格情報を入力して接続。
+
+![image](https://user-images.githubusercontent.com/81737622/205023764-5cf69be1-6442-4652-b6dc-14b6d73fff6e.png)
+
+
+### クライアント側の設定回り
+
+リモートデスクトップをフル画面または、マルチディスプレイで行いたい場合は「リモートデスクトップ接続」>> 「オプション」>> 「画面」>> 「リモートセッションで全てのモニターを使用する」にチェックを入れる。
+
+![image](https://user-images.githubusercontent.com/81737622/205023123-3eda11b3-691d-4964-99f2-01c2bfbde2bd.png)
+
+### トラブルシューティング
+- 「進行中のセッション～～～」で怒られた
+  - 解決がむずかしかった。職場のデスクトップ(win10Pro)から自宅のデスクトップ(Win10Pro)に接続を試みた際に出たエラー
+  - [こちら](https://github.com/stascorp/rdpwrap) を使用すれば解決するかも？
+- 資格情報周りのエラー
+  - [Remote Desktopで"お使いの資格情報は機能しませんでした"と表示される場合の対処法](https://qiita.com/Shion1305/items/45fb2d099db39febc1a0) 自分の場合は、こちらの記事にある方法で解決できた。
+
+
 
 ### 参考
 - [【Windows Server 2019】SSH ポートフォワーディング（トンネリング）経由で、リモートデスクトップ接続する。](https://zapping.beccou.com/2021/08/21/using-ssh-port-forwarding-tunneling-about-remote-desktop-connection/#ssh-4)

@@ -118,6 +118,25 @@ console.log(bread, meat); // => dutch crunch tuna
 
 Reactで書かれたコードを読んでいるとよく見かける気がする。最初、これなんだ？って躓いたのでメモ
 
+---
+
+### production環境とdevelop環境で表示を変えたい場合
+Rails + React + TypeScriptの環境で、本番環境においてはOOの部分は非表示で！みたいな条件があったとき
+
+```javascript
+const isProd = () => process.env.NODE_ENV === 'production'
+```
+としてあげて、
+```javascript
+{isProd() && (
+  <>
+    <p>だし分けしたい何か</p>
+  </>
+)}
+```
+としてあげればよい。（たぶん）
+
+---
 
 
 

@@ -14,7 +14,9 @@ Wake on LANという方法を使えばホストPCの電源を遠隔操作でon�
 
 ### 環境
 ホストPC( メインPC ): Window10Pro -> 有線LAN接続 ( マザボ: ASROCK B450 steal legend )
+
 クライアントPC: thinkpadE14Gen4 Windows11Home -> 外部でリモートデスクトップ作業
+
 ラズパイzero2w -> wifi接続でホストPCと同一ネットワークに所属
 
 今回の場合、大前提として、グローバルIPアドレスがあり、ラズパイに外部からSSHできる環境が前提になる。

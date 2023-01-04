@@ -32,3 +32,7 @@
 - 関数のmemo化 → useCallback()
 - 変数のmemo化 → useMemo()
 
+### コードレビューで受けたアドバイス
+#### useEffect()やuseMemo()のdepsは指定するようにしましょう
+バグの原因になる
+

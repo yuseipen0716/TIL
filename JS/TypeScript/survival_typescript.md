@@ -56,6 +56,36 @@ if (typeof value === "string") {
 
 型を絞り込んだあとは、その型として使用できる。
 
+#### JSON.parse()の戻り値の型
+
+JSON.parse()の戻り値の型はanyで返される。存在しないプロパティにアクセスしてしまうと、エラーが出てしまう
+
+```javascript
+const res: unknown = JSON.parse('...');
+```
+
+としてあげると、存在しないプロパティへのアクセスにコンパイル時に気づくことができる。
+
+#### まったく異なる型への型アサーション
+```javascript
+const str = "a";
+const num = str as number;
+```
+とすると、
+
+```
+Conversion of type 'string' to type 'number' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+```
+というようなエラーが出る。通常、型アサーションでは、まったく異なる型の指定はできない。
+
+ここにunknown型を噛ますことで、上記の型アサーションでのエラーを回避することができるようだ。
+
+```javascript
+const str = "a";
+const num = str as unknown as number;
+```
+
+※型アサーションは実際に値の型をキャストしているのではなく、TypeScriptにその型であると認識させているだけなので、型安全性の問題は残るとのこと。
 
 
 

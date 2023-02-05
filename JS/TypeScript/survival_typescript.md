@@ -23,3 +23,14 @@ const obj = {
 ```
 
 `as const`によるconstアサーションを行う場合、オブジェクトリテラル内にオブジェクトリテラルを持つ場合も再帰的にreadonlyにすることができる。
+
+### typeof演算子 nullのとき
+null型の値に対して`typeof`を使うと、`object`が返されるため注意が必要。
+
+typeof null => objectを意識した実装の例（サバイバルTypeScriptから引用）
+
+```javascript
+function isObject(value) {
+  return value !== null && typeof value === "object";
+}
+```

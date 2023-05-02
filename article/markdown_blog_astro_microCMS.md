@@ -83,6 +83,7 @@ markedjsを使用してHTMLにした後でhighlight.jsを利用してシンタ�
 #### 1. src配下にutilsディレクトリを作成し、markdownHighlight.tsを作成
 ```
 mkdir src/utils
+touch src/utils/markdownHighlight.ts
 ```
 
 [cheerio](https://github.com/cheeriojs/cheerio) というライブラリを使用します。こちらにhtml形式のテキストを渡すと、jQueryのような操作でclass名を付与したり、styleを当てることができました。
@@ -160,5 +161,8 @@ const html = highlightMarkdown(parsed)
 
 シンタックスハイライトやコードブロックの背景色以外にも、h2タグには下線を引きたいなど、当てたいスタイルがあれば`markdownHighlight.ts`に変換時の処理を追加することで実現できます。
 
-こちらのブログサイトのソースコードはGitHub上で公開していますので、気になった方はhttps://github.com/yuseipen0716/yusei_note こちらへどうぞ。
+こちらのブログサイトのソースコードはGitHub上で公開していますので、気になった方は
 
+https://github.com/yuseipen0716/yusei_note
+
+こちらへどうぞ。

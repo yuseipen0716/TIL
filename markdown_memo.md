@@ -226,7 +226,11 @@ ___
 
 > **Note**
 
+`> **Note**`
+
 > **Warning**
+
+`> **Warning**`
 
 
 

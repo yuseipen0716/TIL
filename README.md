@@ -10,8 +10,6 @@
 ### markdown記法のメモ
 https://github.com/yuseipen0716/TIL/blob/main/markdown_memo.md
 
-[リンク](./markdown_memo.md)
-
 ---
 **Author**
 

@@ -39,3 +39,8 @@ resourcesをネストしてかける。
 
 または`if obj`で存在チェックをするのも手。
 
+### アプリケーションで使用されているHTTPメソッドを調べるワンライナー
+```
+rails routes | awk 'NR > 1 && $(NF-2) != "" {print $(NF-2)}' | sort | uniq
+```
+

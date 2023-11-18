@@ -1,6 +1,8 @@
 #マークダウン記法自分用メモ
 ---
 
+たまに仕様が変わる？ため、最新版は[こちら](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) のドキュメントを確認した方がよさそう。
+
 マークダウン記法に慣れていきたい。
 
 ## 目次

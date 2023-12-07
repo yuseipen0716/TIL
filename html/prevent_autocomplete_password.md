@@ -1,0 +1,15 @@
+## Chromeでpasswordをauto completeされて困った話
+
+Chromeを使っていると、emailとかpasswordをログインフォームなどで自動で入力してもらえるが、ちょっと困った状況になったので、その対象をメモしておく。
+
+そもそも、emailとpasswordのautocompleteは`type="password"`が設定されているフォームにpassword、その一つ前のinputにemailが入力される仕組みみたい。
+
+今回、パスワード編集を行うためのモーダルを作成したら、変更予定のパスワードの一つ目にpasswordと、モーダルの裏でdisabled=falseになっていたinputにemailが入力されてしまう状況に陥った。
+
+`type="password"`を設定するが、autocompleteされると困る場合は、`auto-complete="new-password"`を設定する。
+
+それでも「モーダルの裏でdisabled=falseになっていたinputにemailが入力されてしまう」状況は直らず。
+
+そもそも、モーダルが開いている状況であれば、その下にあるinputに入力することはないのだから、disabled=trueにしてしまえばよさそうだった。
+
+この時書いていたのはReactだったので、setOpenModalのような値をdisabledに入れてあげたら解決した。

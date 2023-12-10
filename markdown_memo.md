@@ -244,13 +244,23 @@ ___
 - [x] チェックを入れる(`- [x] チェックを入れる`)
 
 
-> **Note**
+## アラート構文
 
-`> **Note**`
+> [!NOTE]
+> `> **Note**`
 
-> **Warning**
+> [!TIP]
+> `[!TIP]`
 
-`> **Warning**`
+> [!IMPORTANT]
+> `> [!IMPORTANT]`
+
+> [!WARNING]
+> `> [!WARNING]`
+
+> [!CAUTION]
+> `> [!CAUTION]`
+
 
 
 

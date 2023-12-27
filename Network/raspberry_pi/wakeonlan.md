@@ -61,4 +61,20 @@ wakeonlanのpackageをinstall `sudo apt install wakeonlan`
 - ラズパイにて`wakeonlan XX:XX:XX:XX:XX:XX<先ほど控えておいたホストPCのMACアドレス>`実行
 - ホストPC起動( やった～ )
 
+### トラブルシューティング
+ラズパイから`wakeonlan XX:XX:XX:XX:XX:XX`を実行してもシャットダウン状態またはスリープ状態から復帰しない場合
+
+考えられる原因
+- raspberrypiのwakeonlan周辺のパッケージのバージョン問題
+  - `sudo apt update`
+  - `sudo apt upgrade`
+  - 再度wakeonlan実行してみる。
+- WindowsUpdateなどの影響で、UEFIの設定がリセットされているケースがあったので、UEFIに入って、上で設定したUEFIの設定変更をもう一度行う。
+  - WindowsのBIOSモードがレガシでなく、UEFIの場合
+    1. Shiftを押しながら、再起動
+    2. トラブルシューティング
+    3. 詳細オプション
+    4. UEFIファームウェア設定
+    5. 再起動
+
 

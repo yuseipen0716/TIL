@@ -42,3 +42,16 @@
 
 GDという拡張モジュールが足りない？ようだった。
 
+Dockerfileのapt-get installしている部分に以下を追加。
+
+```
+RUN apt-get update &&\
+  # JPEG 対応
+  apt-get install -y libpng-dev libjpeg62-turbo-dev &&\
+  docker-php-ext-configure gd --with-jpeg &&\
+  docker-php-ext-install -j$(nproc) gd
+```
+
+上記を追加後、`docker compose up -d --build`
+
+

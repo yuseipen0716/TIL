@@ -4,7 +4,17 @@ OpenAPIってなんぞや？Swaggerなにそれ？おいしいの？っていう
 
 
 
+
+
 ## memo
+Laravelでl5-swaggerを使用する場合は、以下のようなアノテーションを追加して、
+
+```
+php artisan l5-swagger:generate
+```
+
+すると、api-docs.jsonが生成される。
+
 
 ```
 

@@ -7,7 +7,7 @@
 ## 4.times.eachみたいなループでもインデックスを1から始めたい
 ```ruby
 1.upto(4).each do |i|
-p i
+  p i
 end
 ```
 これでいけた。

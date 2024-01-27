@@ -24,7 +24,7 @@ use OpenApi\Annotations as OA;
  *      title="",
  *      description="", // 記載例「users: ユーザーマスタ」
  *      @OA\Property( // 1つ上の行に改行は不要
- *          property="",
+ *          property="", // property名はキャメルケースで。
  *          type="",
  *          format="", // 必要なら記載
  *          description="" // 日本語で。
@@ -41,7 +41,7 @@ use OpenApi\Annotations as OA;
  *      ),
  *     // created_at, updated_atはできればSchemaに含めてほしいです。deleted_atはnullable=trueでSchemaに入れていただけると嬉しいです。(nullable=falseは記載不要です)以下、記載例
  *      @OA\Property(
- *          property="created_at",
+ *          property="createdAt",
  *          type="string",
  *          format="date-time",
  *          description="Timestamp when the country was created"

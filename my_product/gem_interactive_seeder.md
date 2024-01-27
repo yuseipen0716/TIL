@@ -21,6 +21,7 @@ end
 ### やっていて感じた課題
 - belongs_toでoptional:trueでない関連付けは事前に用意しておく必要があったり、has_manyの関連をどのタイミングで作成するかなどややむずかしい。
   - 事前に準備が必要なモデルであってもマスタデータが存在するものは新規でレコードを作成してはいけないので、そのあたりはidを選択するようなプロンプトにしないと事故りそう。
+    - Gemにするような一般化するレベルなら、configファイルみたいなのを読み込んで、`exclude_models`みたいなのを設定しておかないといけないか。
   - belongs_toの準備は再帰的にprepare_relationsみたいな処理を回すが、has_manyの方は、`@params`ハッシュ内にattributesとして格納できれば良いので、もう少し考えないと。 
 - formatやexampleの整備が大変。また、defaultのparamsを作成するのはどのようにしたらよいか。（Modelのcolumnsをeachで回せば、columnのdefaultバリューも取得できる。formatなどの指定がない場合はフォールバック的にcolumnのdefaultをparamsに入れたい気持ちはあるが。）
 - 1度に複数のレコード（3人のUserとか）を作成したいときには弱いなぁ

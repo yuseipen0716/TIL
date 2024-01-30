@@ -39,3 +39,8 @@ nilのものと1のものを抽出したかったので、`where.not(column_name
 そのため、このような場合は
 
 `where(column_name: [nil, 1])`というように、OR条件で検索をかけてやる必要があった。
+
+### 今日作成したレコードを取得
+```ruby
+Model.where(created_at: Time.zone.today.beginning_of_day..TIme.zone.today.end_of_day)
+```

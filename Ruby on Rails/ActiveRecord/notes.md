@@ -42,5 +42,5 @@ nilのものと1のものを抽出したかったので、`where.not(column_name
 
 ### 今日作成したレコードを取得
 ```ruby
-Model.where(created_at: Time.zone.today.beginning_of_day..TIme.zone.today.end_of_day)
+Model.where(created_at: Time.zone.today.beginning_of_day..Time.zone.today.end_of_day)
 ```

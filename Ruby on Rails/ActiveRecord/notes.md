@@ -44,3 +44,19 @@ nilのものと1のものを抽出したかったので、`where.not(column_name
 ```ruby
 Model.where(created_at: Time.zone.today.beginning_of_day..Time.zone.today.end_of_day)
 ```
+
+### LIKE検索
+```ruby
+User.where('email LINE ?', 'user-hoge-hoge%')
+```
+=> emailが`user-hoge-hoge`で始まるUserを検索。
+
+
+emailが`user-hoge-hoge-1_1@example.com`とか、`user-hoge-hoge-1_4@example.com`みたいなUserを検索したいときに、
+
+```ruby
+User.where('email LINE ?', 'user-hoge-hoge-1_%')
+```
+
+のようにしたら、`user-hoge-hoge-10_1@example.com`みたいな、emailもヒットした。MySQLの仕様？`_`は任意の文字列にヒットしてしまう?
+

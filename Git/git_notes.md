@@ -150,5 +150,6 @@ diffの画面が立ち上がって、stagingにあげるかどうかを聞かれ
 
 ---
 
+### GitHub FlowとGit Flow
 
 

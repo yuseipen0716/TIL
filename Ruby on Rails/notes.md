@@ -44,3 +44,9 @@ resourcesをネストしてかける。
 rails routes | awk 'NR > 1 && $(NF-2) != "" {print $(NF-2)}' | sort | uniq
 ```
 
+### count, length, sizeメソッド
+#### countメソッド
+
+#### lengthメソッド
+
+#### sizeメソッド

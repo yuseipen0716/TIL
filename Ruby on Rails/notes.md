@@ -44,6 +44,25 @@ resourcesをネストしてかける。
 rails routes | awk 'NR > 1 && $(NF-2) != "" {print $(NF-2)}' | sort | uniq
 ```
 
+### exit使うな
+rakeタスクとrbファイルを使って、対話式のスクリプトを書いていたが、exitで終了している部分があり、rubocopに怒られた。
+
+exitだと、プロセス自体を落としてしまうので、よくないみたい。
+
+```ruby
+puts 'xxxは不正な値です'
+exit
+```
+
+ではなく
+```ruby
+abort 'xxxは不正な値です'
+```
+
+に直してみた。
+
+---
+
 ### count, length, sizeメソッド
 #### countメソッド
 

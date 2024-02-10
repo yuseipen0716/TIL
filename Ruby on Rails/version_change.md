@@ -29,3 +29,27 @@
     - `$ rails _6.1.0_ new sample`
 
 [Rails アップグレードガイド](https://railsguides.jp/upgrading_ruby_on_rails.html)
+
+### Docker環境などで環境を作っているプロジェクトでRubyのversionを指定する
+.ruby-versionというファイルを作り、
+```
+3.1.0
+```
+
+のような記載をしておく。
+
+これをプロジェクトルートにおいておくと、
+
+ruby -vしたときに
+
+```
+$ ruby -v
+rbenv: version `3.1.0' is not installed (set by /home/yuseipen0716/test-pj/.ruby-version)
+```
+のような警告が出る
+
+```
+rbenv install 3.1.0
+```
+をし、規定のversionをinstall
+

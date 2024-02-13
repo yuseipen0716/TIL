@@ -53,3 +53,29 @@ rbenv install 3.1.0
 ```
 をし、規定のversionをinstall
 
+### rbenvとruby-buildのupgrade
+最新のrubyにversion changeしようとしたらrbenvが最新になっていなくてできなかった。
+
+apt upgradeしても最新版にならなかったので、調べた。自分でrbenvのrepoをcloneすればいいみたい。
+
+```
+rm -rf .rbenv
+git clone https://github.com/sstephenson/rbenv.git .rbenv
+```
+
+ruby-buildも
+
+```
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+```
+
+.bashrcに以下のような記述があるか、念のため確認
+
+```
+export PATH="~/.rbenv/shims:/usr/local/bin:$PATH"
+eval "$(rbenv init -)"
+```
+
+あとは、shellを再起動して、rbenv -vしてversion確認。
+
+

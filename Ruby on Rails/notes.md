@@ -69,3 +69,14 @@ abort 'xxxは不正な値です'
 #### lengthメソッド
 
 #### sizeメソッド
+
+### log clear
+test実行が遅い時など、test.logがたまっている場合がある。
+
+```
+bin/rails log:clear
+```
+
+でlogをclear
+
+あとは、test用のDBをresetしたりしても軽くなる場合あり。

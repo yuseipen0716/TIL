@@ -24,3 +24,9 @@ context 'this is pending test' do
   end
 end
 ```
+
+`pending`メソッドだと、expectation実行されて、テストが落ちない場合にエラーが出る！
+
+skipだとそのような挙動ではなく、純粋にpendingしてくれるっぽい
+
+

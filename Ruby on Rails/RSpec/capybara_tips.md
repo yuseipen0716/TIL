@@ -23,9 +23,16 @@ end
 ### ページの見出し等を調べたいときはシンプルに。
 もし、画面トップに表示されるh1タグの内容が特定の文言と一致するかどうかのチェックをしたいだけであれば、have_contentマッチャを使用しなくても、以下のようにしてもいい気がする。
 
-```
+```ruby
 it 'ページ見出しがHOGEであること' do
   h1_text = page.find('h1').text
   expect(h1_text).to eq('HOGE')
 end
+```
+
+`page(:all)`をすれば、検索条件に合致する要素を配列に入れてくれる。
+
+`.MuiButton-label`クラスの要素のtextを配列に格納
+```ruby
+button_labels = page.all('.MuiButton-label').map(&:text)
 ```

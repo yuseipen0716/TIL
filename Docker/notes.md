@@ -17,3 +17,8 @@ PCを起動すると自動で立ち上がるコンテナがある。それが立
 ```
 docker ps | awk '{print $1}' | sed -e 's/CONTAINER//g' | xargs docker stop
 ```
+
+### Dockerfileの記載順
+Dockerfileは上から読み込まれ、変更がない分はキャッシュが使用される。
+
+そのため一番上とかにnode_modulesのようなpackage関連のことを書くと、ライブラリ等の追加のたびに再ビルドが起こるので、それらは最後の方に書く。

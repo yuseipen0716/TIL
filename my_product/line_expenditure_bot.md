@@ -8,3 +8,4 @@
 ### 構成
 API -> Ruby on Rails APIモード
 RaspberryPi4B 8GBモデルで運用。（Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-1042-raspi aarch64)）
+Dockerで環境構築。

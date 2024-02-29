@@ -15,4 +15,5 @@ Dockerで環境構築。
 - webコンテナ（rails）
 - nginxコンテナ
 - certbotコンテナ（productionのみで動かす。SSL化のため）
+  - LINE messagingAPIを使用するためにSSL化が必要だったため。
 

@@ -45,6 +45,13 @@ nilのものと1のものを抽出したかったので、`where.not(column_name
 Model.where(created_at: Time.zone.today.beginning_of_day..Time.zone.today.end_of_day)
 ```
 
+### migrationファイルのtypoにご注意
+`add_column`でbooleanのカラムを追加した際に、`dafault: false`を入力したつもりが`defalt: false`になっていた。
+
+エラーも出ずにマイグレーションできちゃったので、全然気づかず、あとから「default値設定したのに入ってないやんけ。」となり、気づいた。
+
+ご注意を。
+
 ### LIKE検索
 ```ruby
 User.where('email LINE ?', 'user-hoge-hoge%')

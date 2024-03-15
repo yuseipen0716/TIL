@@ -24,6 +24,13 @@ migrationしようと思ったらカラムが重複していますというエ�
 4. `rails db:migrate`
 5. OK！ 念のため、`rails db:migrate:status`で確認
 
+### 特定のVERSIONまでrollbackする
+`rails db:rollback STEP=3`
+
+のようにすれば、指定した数だけ、最新から数えてrollbackしてくれるが、
+
+`rails db:migrate VERSION=<VERSIONを指定>`のようにすれば、特定のバージョンの時点でmigrationを行ってくれるため、結果としてそこより先のmigrationはrollbackされる。
+
 
 ### マイグレーションファイルを削除したいとき
 

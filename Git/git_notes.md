@@ -159,4 +159,13 @@ remote に挙がっている者に対して行うと、履歴が書き換えら�
 
 ### GitHub FlowとGit Flow
 
+### 変更があったファイル名やディレクトリ名の抽出
+```
+git status --porcelain | grep -E '^(A| M|\?\?)' | awk '{print $2}'
+```
 
+これを応用して、「ファイルの変更や追加があった部分を指定してrubocopを走らせる」みたいなこともできる
+
+```
+docker compose exec web bundle exec rubocop -a $(git status --porcelain | grep -E '^(A| M|\?\?)' | awk '{print $2}')
+```

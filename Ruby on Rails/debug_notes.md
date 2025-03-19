@@ -17,6 +17,12 @@ def output_current_action
 end
 ```
 
+これでもよさそう
+
+```ruby
+before_action -> { p "#{controller_path}##{action_name}" }
+```
+
 ### メソッド名の出力
 ループ処理の中などで、どのタイミングで、どのメソッドが呼ばれているのか迷子になった場合などを知りたいときに。
 

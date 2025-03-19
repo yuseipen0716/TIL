@@ -13,14 +13,14 @@ logを出す度合いを決めている設定。config/environment/development.r
 ``` ruby
 before_action :output_current_action
 def output_current_action
-  p "#{controller_path}##{action_name}"
+  p "💡💡💡#{controller_path}##{action_name}"
 end
 ```
 
 これでもよさそう
 
 ```ruby
-before_action -> { p "#{controller_path}##{action_name}" }
+before_action -> { p "💡💡💡#{controller_path}##{action_name}" }
 ```
 
 ### メソッド名の出力

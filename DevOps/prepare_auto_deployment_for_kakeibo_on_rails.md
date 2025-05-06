@@ -12,11 +12,13 @@ ssh-keygen -t ed25519 -C "github-actions-deploy"
 ```
 Enter file in which to save the key (/path/to/.ssh/id_ed25519):
 ```
-のように効かれるので、別名で保存しておく。
+のようにきかれるので、別名で保存しておく。
 
 ```
 Enter file in which to save the key (/path/to/.ssh/id_ed25519): /path/to/.ssh/github_actions_deploy
 ```
+
+※ ワークフローの中で動かす場合、パスフレーズを求められるとPermission deniedなどのエラーになるため、パスフレーズは設定せず、キーペアを作成する。
 
 ### 2. RaspberryPi側にdeploy用のユーザーを作成する
 deployという名前のuserを作成しておく
@@ -26,7 +28,7 @@ sudo adduser deploy
 # passwordなどを聞かれるため、設定する。フルネームなどはskip可
 ```
 
-必要に応じてsudo権限の付与
+必要に応じてsudo権限の付与（今回は必要なかったので省略）
 
 ```
 # sudoグループに追加
@@ -79,11 +81,99 @@ Settings >> Secrets and variables >> Actions から、以下のsecretsを追加
 - `SSH_PORT`: SSHポート
 - `SSH_USER`: Raspberry PiのSSHユーザー名
 
+### 4. repositoryのDeployKeyを設定する
+自動デプロイのワークフローの中で、`git pull`などを実行するため、必要。
 
-### 4. ワークフローのファイルを作成
+ワークフローの中で実行するため、パスフレーズは設定せず作成しておく
+
+#### キーペアの作成
+RaspberryPiに、deployユーザーでログインした状態で実行。
+
+```
+ssh-keygen -t ed25519 -f ~/.ssh/github_deploy_key -C "github-deploy-key"
+```
+
+#### GitHub上でDeployKeyの登録
+↑ こちらで作成したキーペアのうち、公開鍵の情報をrepositoryのDeployKeyに登録しておく。
+
+※ 今回は、`git fetch`や`git pull`などの読み取り操作のみ行うため、Read-onlyの権限にした
+
+#### ~/.ssh/config編集
+今回作成した鍵を使用するようにする
+
+```config
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_deploy_key
+  IdentitiesOnly yes
+```
+
+#### 動作確認
+```
+ssh -T git@github.com
+```
+を実行したとき、パスフレーズなしで、テストに成功することを確認する。（Hi! xxx のようなメッセージが返ってきたらOK）
+
+### 5. ワークフローのファイルを作成
+```yaml
+name: Deploy Production
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy_production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_ed25519
+          known_hosts: unnecessary
+          if_key_exists: replace
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy Production with build check
+        run: |
+          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
+            cd kakeibo_on_rails &&
+            git checkout . &&
+            git fetch origin main &&
+
+            # サービスを停止しておく
+            docker-compose -f docker-compose.production.yml down &&
+
+            # Gemfile関連に変更があるか確認
+            if git diff --name-only HEAD..origin/main | grep "Gemfile\|Gemfile.lock"; then
+              echo "Gemfile changes detected, building containers..."
+              git pull origin main &&
+              docker-compose -f docker-compose.production.yml build &&
+              docker-compose -f docker-compose.production.yml up -d
+            else
+              echo "No Gemfile changes, regular deploy"
+              git pull origin main &&
+              docker-compose -f docker-compose.production.yml up -d
+            fi
+          '
+```
+
+### 6.動作確認
+成功。（何度も失敗した末、、）
+![image](https://github.com/user-attachments/assets/a39a168b-547e-43b9-94f7-497929059113)
 
 
 
+## 詰まったところ
+### ssh接続できない（Permission denied）
+作成したキーペアが、パスフレーズを求めるものだった。
+
+### git pull実行時にエラーが発生
+原因としては同上。パスフレーズを求められてしまったため、スクリプトの続きが実行できない状態になっていた。
 
 
 
